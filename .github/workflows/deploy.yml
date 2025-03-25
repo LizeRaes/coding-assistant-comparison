@@ -3,7 +3,7 @@ name: Update Website
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'     # runs daily at midnight UTC
+    - cron: '0 0 * * *'
   push:
     branches:
       - main
@@ -24,7 +24,7 @@ jobs:
           echo "Site updated"
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v1.0.6
         with:
           path: public
 
@@ -42,4 +42,4 @@ jobs:
     steps:
       - name: Deploy GitHub Pages site
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v1.2.9
