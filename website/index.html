@@ -4,46 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Coding Assistant Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/tabulator-tables@5.4.3/dist/js/tabulator.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tabulator-tables@5.4.3/dist/css/tabulator.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <h1>AI Coding Assistant Comparison</h1>
-        <p>Compare features and pricing of popular AI coding assistants</p>
-    </header>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-4">AI Coding Assistant Comparison</h1>
 
-    <main>
-        <div class="filters">
-            <input type="text" id="search" placeholder="Search tools...">
-            <select id="feature-filter">
-                <option value="">Filter by feature</option>
-                <option value="code_completion">Code Completion</option>
-                <option value="code_explanation">Code Explanation</option>
-                <option value="test_generation">Test Generation</option>
-            </select>
+        <!-- Filter Controls -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+            <label class="font-semibold">Filter:</label>
+            <div id="filters" class="flex flex-wrap gap-2"></div>
+            <button id="addFilter" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">+ Add Filter</button>
+            <button id="clearFilters" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 ml-2 hidden">Clear Filters</button>
         </div>
 
-        <table id="comparison-table">
-            <thead>
-                <tr>
-                    <th>Tool</th>
-                    <th>Company</th>
-                    <th>Pricing</th>
-                    <th>Features</th>
-                    <th>Languages</th>
-                    <th>IDE Support</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Populated by JavaScript -->
-            </tbody>
-        </table>
-    </main>
+        <!-- Table -->
+        <div id="table"></div>
+    </div>
 
-    <footer>
-        <p>Contribute on <a href="https://github.com/yourusername/coding-assistant-comparison">GitHub</a></p>
-    </footer>
-
+    <script src="../data/assistants.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

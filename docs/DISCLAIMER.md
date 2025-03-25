@@ -1,19 +1,27 @@
-# Legal Disclaimer
 
-This project provides a comparison of AI coding assistants for informational purposes only.
+---
 
-## No Warranty
+### **📄 DISCLAIMER.md**
+```markdown
+# Disclaimer
 
-THE INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+This repository and website are **community-maintained** and provided for informational purposes only. While we strive to keep the information up to date and accurate, **we do not guarantee** the correctness, completeness, or reliability of any data presented.
 
-## Not Official Information
+## ❗ Important Notes:
+- The information in this comparison is **user-submitted** and may not reflect the most current details about AI coding assistants.
+- **Always verify details** by checking the official websites of the respective tools.
+- The repository maintainers **are not responsible** for any decisions made based on this dataset.
+- This repository **does not endorse or promote** any specific tool listed.
 
-The information provided about various AI coding assistants is collected from publicly available sources and may not be complete or up-to-date. Users should verify information directly with the respective companies.
+## 🛡️ Manufacturer and Maintainer Contributions
+Tool manufacturers and maintainers are welcome to **submit updates via Pull Requests (PRs)** to ensure their tool’s details are accurate. However, all contributions must adhere to our contribution guidelines ([CONTRIBUTING.md](CONTRIBUTING.md)).
 
-## No Liability
+## ⚖️ No Warranty & Limitation of Liability
+This project is made available under the **Apache 2.0 License**, which includes the following disclaimers:
+- **No Warranty:** The data is provided "as is" without warranties of any kind.
+- **No Liability:** The repository owners and contributors are **not liable** for any errors, losses, or damages arising from the use of this dataset.
+- **Use at Your Own Risk:** You are solely responsible for verifying and interpreting the data for your own needs.
 
-The maintainers of this project shall not be liable for any damages arising from the use of this information.
+For more details, refer to the full **[LICENSE](LICENSE)** file.
 
-## Trademarks
-
-All product names, logos, and brands are property of their respective owners. 
+By using this dataset and website, you acknowledge and agree to these terms.

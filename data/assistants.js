@@ -1,4 +1,4 @@
-[
+const assistants = [
     {
       "Tool": "Cursor",
       "Code Completion": "✅",
@@ -49,7 +49,7 @@
       "Controls Tools": "➖",
       "Nice To Haves": "great copy mode (files AND file structure) for use in Claude etc., huge model choice, free, OSS",
       "Watch Out": "no code completion"
-    }
+    },
     {
     "Tool": "JUNIE",
     "Code Completion": "➖",

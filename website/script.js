@@ -1,72 +1,84 @@
-async function loadTools() {
-    try {
-        const response = await fetch('../data/tools.json');
-        const data = await response.json();
-        return data.tools;
-    } catch (error) {
-        console.error('Error loading tools:', error);
-        return [];
-    }
-}
+document.addEventListener("DOMContentLoaded", function () {
+    let table;
+    let filters = [];
 
-function renderTable(tools) {
-    const tbody = document.querySelector('#comparison-table tbody');
-    tbody.innerHTML = '';
-
-    tools.forEach(tool => {
-        const row = document.createElement('tr');
-        
-        row.innerHTML = `
-            <td>
-                <a href="${tool.website}" target="_blank">${tool.name}</a>
-            </td>
-            <td>${tool.company}</td>
-            <td>
-                ${tool.pricing.free_tier ? '✓ Free tier<br>' : ''}
-                Individual: ${tool.pricing.individual}<br>
-                Enterprise: ${tool.pricing.enterprise}
-            </td>
-            <td>
-                ${Object.entries(tool.features)
-                    .map(([feature, has]) => `${has ? '✓' : '✗'} ${feature.replace(/_/g, ' ')}`)
-                    .join('<br>')}
-            </td>
-            <td>${tool.supported_languages.join(', ')}</td>
-            <td>${tool.ide_support.join(', ')}</td>
-        `;
-        
-        tbody.appendChild(row);
+    // Initialize Tabulator table with pre-loaded data
+    table = new Tabulator("#table", {
+        data: assistants, // This will be available from the JSON file
+        layout: "fitColumns",
+        columns: [
+            { title: "Tool", field: "Tool", formatter: "link", formatterParams: { urlField: "Website" }, headerFilter: "input" },
+            { title: "Pricing", field: "Pricing", headerFilter: "input" },
+            { title: "Code Completion", field: "Code Completion" },
+            { title: "Chat", field: "Chat" },
+            { title: "Smart Apply", field: "Smart Apply" },
+            { title: "On Prem Option", field: "On Prem Option" },
+            { title: "Agent Mode", field: "Agent Mode" },
+            { title: "Watch Out", field: "Watch Out", headerFilter: "input" },
+        ],
     });
-}
 
-function setupFilters(tools) {
-    const searchInput = document.getElementById('search');
-    const featureFilter = document.getElementById('feature-filter');
+    // Filtering logic
+    function updateFilters() {
+        table.setFilter(filters);
+        document.getElementById("clearFilters").classList.toggle("hidden", filters.length === 0);
+    }
 
-    function filterTools() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const selectedFeature = featureFilter.value;
+    document.getElementById("addFilter").addEventListener("click", function () {
+        const filterContainer = document.createElement("div");
+        filterContainer.className = "flex items-center gap-2 bg-gray-200 p-2 rounded-md";
 
-        const filtered = tools.filter(tool => {
-            const matchesSearch = tool.name.toLowerCase().includes(searchTerm) ||
-                                tool.company.toLowerCase().includes(searchTerm);
-            
-            const matchesFeature = !selectedFeature || tool.features[selectedFeature];
-            
-            return matchesSearch && matchesFeature;
+        const fieldSelect = document.createElement("select");
+        fieldSelect.className = "p-2 border rounded";
+        ["Tool", "Pricing", "Code Completion", "Chat", "Smart Apply", "On Prem Option", "Agent Mode"].forEach(field => {
+            const option = document.createElement("option");
+            option.value = field;
+            option.textContent = field;
+            fieldSelect.appendChild(option);
         });
 
-        renderTable(filtered);
-    }
+        const conditionSelect = document.createElement("select");
+        conditionSelect.className = "p-2 border rounded";
+        ["is", "is not", "contains", "does not contain"].forEach(cond => {
+            const option = document.createElement("option");
+            option.value = cond;
+            option.textContent = cond;
+            conditionSelect.appendChild(option);
+        });
 
-    searchInput.addEventListener('input', filterTools);
-    featureFilter.addEventListener('change', filterTools);
-}
+        const valueInput = document.createElement("input");
+        valueInput.type = "text";
+        valueInput.className = "p-2 border rounded";
+        valueInput.placeholder = "Enter value";
 
-async function initialize() {
-    const tools = await loadTools();
-    renderTable(tools);
-    setupFilters(tools);
-}
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "❌";
+        removeButton.className = "text-red-500";
+        removeButton.addEventListener("click", () => {
+            filters = filters.filter(f => f !== filter);
+            filterContainer.remove();
+            updateFilters();
+        });
 
-document.addEventListener('DOMContentLoaded', initialize); 
+        const filter = { field: "Tool", type: "=", value: "" };
+        filters.push(filter);
+
+        fieldSelect.addEventListener("change", () => filter.field = fieldSelect.value);
+        conditionSelect.addEventListener("change", () => {
+            filter.type = conditionSelect.value === "is" ? "=" :
+                          conditionSelect.value === "is not" ? "!=" :
+                          conditionSelect.value === "contains" ? "like" : "not like";
+        });
+        valueInput.addEventListener("input", () => filter.value = valueInput.value);
+
+        filterContainer.append(fieldSelect, conditionSelect, valueInput, removeButton);
+        document.getElementById("filters").appendChild(filterContainer);
+        updateFilters();
+    });
+
+    document.getElementById("clearFilters").addEventListener("click", function () {
+        filters = [];
+        document.getElementById("filters").innerHTML = "";
+        updateFilters();
+    });
+});
