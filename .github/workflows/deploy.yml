@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p public
           cp -r website/* public/
-          cp -r data public/data
+          cp -r website/data public/data
           echo "Site updated"
 
       - name: Upload GitHub Pages artifact
