@@ -5,56 +5,108 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize Tabulator table with pre-loaded data
     table = new Tabulator("#table", {
         data: assistants,
-        layout: "fitColumns",
+        layout: "fitDataFill",
         height: "100%",
+        cellRendered:function(cell){
+            // Store full value for tooltip
+            cell.getElement().setAttribute("data-full-value", cell.getValue());
+            
+            // Add special styling for tool column cells
+            if(cell.getField() === "Tool") {
+                cell.getElement().style.backgroundColor = "#f3f4f6";
+            }
+        },
         columns: [
-            { title: "Tool", field: "Tool", formatter: "link", formatterParams: { urlField: "Website" }, widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "Pricing", field: "Pricing", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "Code\nCompletion", field: "Code Completion", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Chat", field: "Chat", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Smart\nApply", field: "Smart Apply", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Context\nRetrieval", field: "Context Retrieval", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "Output Not\nCopyrighted", field: "Output Not Copyrighted Guarantee", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Supported\nIDEs", field: "Supported IDEs", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "Underlying\nModel", field: "Underlying Model", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "On Prem\nOption", field: "On Prem Option", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Respects\nCode Flavor", field: "Respects Code Flavor", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Agent\nMode", field: "Agent Mode", widthGrow: 1, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
-            }},
-            { title: "Controls\nTools", field: "Controls Tools", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "Nice To\nHaves", field: "Nice To Haves", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }},
-            { title: "Watch\nOut", field: "Watch Out", widthGrow: 2, formatter: function(cell) {
-                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
-            }}
+            { 
+                title: "Tool\nName", 
+                field: "Tool", 
+                width: 150,
+                minWidth: 120,
+                frozen: true,
+                formatter: function(cell) {
+                    const value = cell.getValue();
+                    const url = cell.getData().Website;
+                    if (!value) return "";
+                    return url ? `<a href="${url}" target="_blank">${value}</a>` : value;
+                }
+            },
+            { 
+                title: "Pricing\nInfo", 
+                field: "Pricing", 
+                width: 150,
+                minWidth: 120
+            },
+            { 
+                title: "Code\nCompletion", 
+                field: "Code Completion", 
+                width: 150,
+                minWidth: 120
+            },
+            { 
+                title: "Chat\nSupport", 
+                field: "Chat", 
+                width: 150,
+                minWidth: 120
+            },
+            { 
+                title: "Smart\nApply", 
+                field: "Smart Apply", 
+                width: 120
+            },
+            { 
+                title: "Context\nRetrieval", 
+                field: "Context Retrieval", 
+                width: 120
+            },
+            { 
+                title: "Output\nCopyright", 
+                field: "Output Not Copyrighted Guarantee", 
+                width: 120
+            },
+            { 
+                title: "Supported\nIDEs", 
+                field: "Supported IDEs", 
+                width: 120
+            },
+            { 
+                title: "Underlying\nModel", 
+                field: "Underlying Model", 
+                width: 120
+            },
+            { 
+                title: "On-Prem\nOption", 
+                field: "On Prem Option", 
+                width: 120
+            },
+            { 
+                title: "Code\nFlavor", 
+                field: "Respects Code Flavor", 
+                width: 120
+            },
+            { 
+                title: "Agent\nMode", 
+                field: "Agent Mode", 
+                width: 120
+            },
+            { 
+                title: "Controls\nTools", 
+                field: "Controls Tools", 
+                width: 120
+            },
+            { 
+                title: "Nice To\nHaves", 
+                field: "Nice To Haves", 
+                width: 120
+            },
+            { 
+                title: "Watch\nOut", 
+                field: "Watch Out", 
+                width: 120
+            }
         ],
-        rowHeight: 60, // Increase row height to accommodate two lines
+        rowHeight: 70,
+        movableColumns: false,
+        resizableColumns: false,
     });
 
     // Get all available fields for filtering
