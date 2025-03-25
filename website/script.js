@@ -2,111 +2,64 @@ document.addEventListener("DOMContentLoaded", function () {
     let table;
     let filterGroups = [];
 
+    // Add scroll hint text above table
+    const tableElement = document.querySelector("#table");
+    const scrollHint = document.createElement("div");
+    scrollHint.className = "scroll-hint";
+    scrollHint.textContent = "Scroll horizontally to see all columns →";
+    tableElement.parentElement.insertBefore(scrollHint, tableElement);
+
     // Initialize Tabulator table with pre-loaded data
+    console.log('Starting table initialization...');
     table = new Tabulator("#table", {
         data: assistants,
-        layout: "fitDataFill",
-        height: "100%",
-        cellRendered:function(cell){
-            // Store full value for tooltip
-            cell.getElement().setAttribute("data-full-value", cell.getValue());
-            
-            // Add special styling for tool column cells
-            if(cell.getField() === "Tool") {
-                cell.getElement().style.backgroundColor = "#f3f4f6";
-            }
-        },
+        layout: "fitColumns",
         columns: [
-            { 
+            {
                 title: "Tool\nName", 
                 field: "Tool", 
-                width: 150,
-                minWidth: 120,
+                width: 120, 
                 frozen: true,
                 formatter: function(cell) {
                     const value = cell.getValue();
-                    const url = cell.getData().Website;
-                    if (!value) return "";
-                    return url ? `<a href="${url}" target="_blank">${value}</a>` : value;
-                }
+                    const homepage = cell.getData().Homepage;
+                    return homepage ? `<a href="${homepage}" target="_blank">${value}</a>` : value;
+                },
+                variableHeight: true
             },
-            { 
+            {title: "Code\nCompletion", field: "Code Completion", width: 120, variableHeight: true},
+            {title: "Chat\nSupport", field: "Chat", width: 120, variableHeight: true},
+            {title: "Smart\nApply", field: "Smart Apply", width: 120, variableHeight: true},
+            {title: "Context\nRetrieval", field: "Context Retrieval", width: 180, variableHeight: true},
+            {title: "Output Not\nCopyrighted", field: "Output Not Copyrighted Guarantee", width: 120, variableHeight: true},
+            {title: "Supported\nIDEs", field: "Supported IDEs", width: 120, variableHeight: true},
+            {title: "Underlying\nModel", field: "Underlying Model", width: 120, variableHeight: true},
+            {title: "On Prem\nOption", field: "On Prem Option", width: 120, variableHeight: true},
+            {title: "Respects\nCode Flavor", field: "Respects Code Flavor", width: 120, variableHeight: true},
+            {
                 title: "Pricing\nInfo", 
                 field: "Pricing", 
-                width: 150,
-                minWidth: 120
+                width: 120, 
+                formatter: function(cell) {
+                    const value = cell.getValue();
+                    const pricingLink = cell.getData().PricingLink;
+                    return pricingLink ? `<a href="${pricingLink}" target="_blank">${value}</a>` : value;
+                },
+                variableHeight: true
             },
-            { 
-                title: "Code\nCompletion", 
-                field: "Code Completion", 
-                width: 150,
-                minWidth: 120
-            },
-            { 
-                title: "Chat\nSupport", 
-                field: "Chat", 
-                width: 150,
-                minWidth: 120
-            },
-            { 
-                title: "Smart\nApply", 
-                field: "Smart Apply", 
-                width: 120
-            },
-            { 
-                title: "Context\nRetrieval", 
-                field: "Context Retrieval", 
-                width: 120
-            },
-            { 
-                title: "Output\nCopyright", 
-                field: "Output Not Copyrighted Guarantee", 
-                width: 120
-            },
-            { 
-                title: "Supported\nIDEs", 
-                field: "Supported IDEs", 
-                width: 120
-            },
-            { 
-                title: "Underlying\nModel", 
-                field: "Underlying Model", 
-                width: 120
-            },
-            { 
-                title: "On-Prem\nOption", 
-                field: "On Prem Option", 
-                width: 120
-            },
-            { 
-                title: "Code\nFlavor", 
-                field: "Respects Code Flavor", 
-                width: 120
-            },
-            { 
-                title: "Agent\nMode", 
-                field: "Agent Mode", 
-                width: 120
-            },
-            { 
-                title: "Controls\nTools", 
-                field: "Controls Tools", 
-                width: 120
-            },
-            { 
-                title: "Nice To\nHaves", 
-                field: "Nice To Haves", 
-                width: 120
-            },
-            { 
-                title: "Watch\nOut", 
-                field: "Watch Out", 
-                width: 120
-            }
+            {title: "Agent\nMode", field: "Agent Mode", width: 120, variableHeight: true},
+            {title: "Controls\nTools", field: "Controls Tools", width: 120, variableHeight: true},
+            {title: "Nice To\nHaves", field: "Nice To Haves", width: 180, variableHeight: true},
+            {title: "Watch\nOut", field: "Watch Out", width: 180, variableHeight: true},
         ],
-        rowHeight: 70,
-        movableColumns: false,
-        resizableColumns: false,
+        height: "100%",
+        rowFormatter:function(row){
+            // Add special styling for tool column cells
+            const cell = row.getCell("Tool");
+            if(cell) {
+                cell.getElement().style.backgroundColor = "#f3f4f6";
+            }
+        },
     });
 
     // Get all available fields for filtering
@@ -200,8 +153,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const valueInput = document.createElement("input");
         valueInput.type = "text";
-        valueInput.className = "p-2 border rounded flex-grow";
+        valueInput.className = "filter-value-input";
         valueInput.placeholder = "Enter value";
+
+        // Create container for input and buttons
+        const inputContainer = document.createElement("div");
+        inputContainer.className = "input-container";
+        inputContainer.appendChild(valueInput);
+
+        // Create symbol buttons container
+        const symbolButtons = document.createElement("div");
+        symbolButtons.className = "symbol-buttons";
+
+        // Create buttons for each symbol
+        const symbols = [
+            { symbol: "✅", tooltip: "Click to insert ✅" },
+            { symbol: "✖️", tooltip: "Click to insert ✖️" }
+        ];
+
+        symbols.forEach(({ symbol, tooltip }) => {
+            const button = document.createElement("button");
+            button.textContent = symbol;
+            button.className = "symbol-button";
+            button.setAttribute("data-tooltip", tooltip);
+            button.addEventListener("click", () => {
+                // Get cursor position
+                const start = valueInput.selectionStart;
+                const end = valueInput.selectionEnd;
+                
+                // Insert symbol at cursor position
+                valueInput.value = valueInput.value.substring(0, start) + 
+                                 symbol + 
+                                 valueInput.value.substring(end);
+                
+                // Move cursor after inserted symbol
+                valueInput.selectionStart = valueInput.selectionEnd = start + symbol.length;
+                
+                // Update filter and maintain focus
+                filter.value = valueInput.value;
+                updateFilters();
+                valueInput.focus();
+            });
+            symbolButtons.appendChild(button);
+        });
+
+        inputContainer.appendChild(symbolButtons);
 
         valueInput.addEventListener("keypress", (e) => {
             if (e.key === "Enter") {
@@ -210,9 +206,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+        valueInput.addEventListener("input", () => {
+            filter.value = valueInput.value;
+            updateFilters();
+        });
+
         const removeButton = document.createElement("button");
-        removeButton.textContent = "❌";
-        removeButton.className = "text-red-500";
+        removeButton.textContent = "Remove criterion";
+        removeButton.className = "remove-button";
         removeButton.addEventListener("click", () => {
             const groupIndex = filterGroups.findIndex(g => g.filters.includes(filter));
             if (groupIndex !== -1) {
@@ -221,18 +222,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     filterGroups.splice(groupIndex, 1);
                 }
             }
-            // Remove the entire row (including operator if it exists)
             filterContainer.parentElement.remove();
             updateFilters();
         });
 
-        const filter = { field: "Tool", type: "like", value: "" }; // Default to "contains" (like)
+        const filter = { field: "Tool", type: "like", value: "" };
         
-        // Create a new filter group if this is the first filter
         if (filterGroups.length === 0) {
             filterGroups.push({ filters: [filter], operator: "AND" });
         } else {
-            // Add to the last group
             filterGroups[filterGroups.length - 1].filters.push(filter);
         }
 
@@ -247,13 +245,8 @@ document.addEventListener("DOMContentLoaded", function () {
                           conditionSelect.value === "contains" ? "like" : "not like";
             updateFilters();
         });
-        
-        valueInput.addEventListener("input", () => {
-            filter.value = valueInput.value;
-            updateFilters();
-        });
 
-        filterContainer.append(fieldSelect, conditionSelect, valueInput, removeButton);
+        filterContainer.append(fieldSelect, conditionSelect, inputContainer, removeButton);
         
         const filtersContainer = document.getElementById("filters");
         

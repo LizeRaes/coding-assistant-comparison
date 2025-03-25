@@ -11,6 +11,7 @@ h1 {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     background-color: white;
+    position: relative;
 }
 
 .tabulator-tableholder {
@@ -33,6 +34,7 @@ h1 {
     left: 0;
     z-index: 2;
     border-right: 1px solid #ddd;
+    height: auto !important;
 }
 
 .tabulator .tabulator-header .tabulator-col[data-field="Tool"] {
@@ -95,7 +97,6 @@ h1 {
     padding: 8px;
     white-space: normal;
     word-wrap: break-word;
-    max-height: 70px;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 13px;
@@ -138,10 +139,102 @@ h1 {
     background: #f3f4f6;
     padding: 8px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.filter-value-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.filter-value-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.symbol-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.symbol-button {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background: white;
+    font-size: 14px;
+    position: relative;
+}
+
+.symbol-button:hover {
+    background: #f3f4f6;
+}
+
+.symbol-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.symbol-button:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.remove-button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.remove-button:hover {
+    background-color: #fecaca;
 }
 
 .filter-buttons {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
+}
+
+/* Add scroll indicator styles */
+.scroll-indicator {
+    display: none;
+}
+
+.scroll-hint {
+    text-align: right;
+    color: #dc2626;  /* Red color */
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: 8px;
 }
