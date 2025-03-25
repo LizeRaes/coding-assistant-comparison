@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every 24 hours
+  workflow_dispatch:     # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Prepare site content in root
+        run: |
+          mkdir public
+          cp -r website/* public/
+          cp -r data public/data
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
