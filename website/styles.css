@@ -1,0 +1,401 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tabulator {
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: #f3f4f6;
+    position: relative;
+    border: none !important;
+}
+
+.tabulator-tableholder {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    background-color: #f3f4f6;
+    padding: 4px 4px 4px 0;
+}
+
+.tabulator .tabulator-header {
+    background-color: #1e40af !important; /* Darker blue for header */
+    position: sticky !important;
+    top: 0;
+    z-index: 3;
+    border: none !important;
+}
+
+.tabulator .tabulator-header .tabulator-col {
+    background-color: #1e40af !important;
+    padding: 0;
+    height: 45px !important;
+    border: none !important;
+    margin: 0 2px;
+}
+
+.tabulator .tabulator-header .tabulator-col-content {
+    border: none !important;
+}
+
+.tabulator .tabulator-header .tabulator-col-resize-handle {
+    display: none !important;
+}
+
+.tabulator .tabulator-cell[data-field="Tool"] {
+    position: sticky !important;
+    left: 0;
+    z-index: 2;
+    margin: 2px 2px 2px 4px;
+    text-align: center;
+    vertical-align: middle;
+    height: 80px !important;
+}
+
+.tabulator .tabulator-header .tabulator-col[data-field="Tool"] {
+    position: sticky !important;
+    left: 0;
+    z-index: 4;
+    margin: 0 2px 0 4px;
+    background-color: #1e40af !important;
+}
+
+.tabulator .tabulator-header .tabulator-col-title {
+    white-space: pre-line !important;
+    padding: 4px 8px !important;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+}
+
+.tabulator .tabulator-header .tabulator-col-sorter {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+}
+
+.tabulator .tabulator-table {
+    width: 100%;
+    background-color: #f3f4f6;
+}
+
+.tabulator .tabulator-row {
+    width: 100% !important;
+    background-color: transparent !important;
+    margin: 0;
+    border: none !important;
+    border-bottom: none !important;
+}
+
+.tabulator .tabulator-row.tabulator-row-even {
+    background-color: transparent !important;
+}
+
+.tabulator .tabulator-row.tabulator-row-odd {
+    background-color: transparent !important;
+}
+
+/* Row colors */
+.row-color-1 .tabulator-cell:not(.tool-column) {
+    background-color: #4F46E5 !important; /* Indigo */
+}
+.row-color-2 .tabulator-cell:not(.tool-column) {
+    background-color: #3B82F6 !important; /* Blue */
+}
+.row-color-3 .tabulator-cell:not(.tool-column) {
+    background-color: #0EA5E9 !important; /* Light Blue */
+}
+.row-color-4 .tabulator-cell:not(.tool-column) {
+    background-color: #6366F1 !important; /* Purple Blue */
+}
+.row-color-5 .tabulator-cell:not(.tool-column) {
+    background-color: #2563EB !important; /* Royal Blue */
+}
+.row-color-6 .tabulator-cell:not(.tool-column) {
+    background-color: #7C3AED !important; /* Purple */
+}
+
+/* Tool column darker colors */
+.row-color-1 .tool-column {
+    background-color: #3730a3 !important; /* Darker Indigo (800) */
+}
+.row-color-2 .tool-column {
+    background-color: #1e40af !important; /* Darker Blue (800) */
+}
+.row-color-3 .tool-column {
+    background-color: #075985 !important; /* Darker Light Blue (800) */
+}
+.row-color-4 .tool-column {
+    background-color: #3730a3 !important; /* Darker Purple Blue (800) */
+}
+.row-color-5 .tool-column {
+    background-color: #1e40af !important; /* Darker Royal Blue (800) */
+}
+.row-color-6 .tool-column {
+    background-color: #6b21a8 !important; /* Darker Purple (800) */
+}
+
+/* Tool column specific styles with maximum specificity */
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+1) .tabulator-cell[data-field="Tool"] {
+    background-color: #3730A3 !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+2) .tabulator-cell[data-field="Tool"] {
+    background-color: #1D4ED8 !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+3) .tabulator-cell[data-field="Tool"] {
+    background-color: #0369A1 !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+4) .tabulator-cell[data-field="Tool"] {
+    background-color: #4338CA !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+5) .tabulator-cell[data-field="Tool"] {
+    background-color: #1E40AF !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n) .tabulator-cell[data-field="Tool"] {
+    background-color: #5B21B6 !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: white !important;
+}
+
+/* Base cell styles */
+.tabulator .tabulator-cell {
+    padding: 8px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    line-height: 1.3;
+    color: white;
+    border: none !important;
+    margin: 2px;
+    text-align: center;
+    vertical-align: middle;
+    height: 80px !important;
+}
+
+.tabulator .tabulator-cell:hover::after {
+    content: attr(data-full-value);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #1e40af;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    white-space: pre-wrap;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
+.tabulator .tabulator-cell a {
+    color: white;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 4px;
+    display: block;
+    text-align: center;
+    line-height: 24px;
+}
+
+.tabulator .tabulator-cell a:hover {
+    text-decoration-style: solid;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter {
+    background: #f3f4f6;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-example-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    cursor: default;
+}
+
+.filter-example-image {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.filter-value-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.filter-value-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.symbol-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.symbol-button {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background: white;
+    font-size: 14px;
+    position: relative;
+}
+
+.symbol-button:hover {
+    background: #f3f4f6;
+}
+
+.symbol-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.symbol-button:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.remove-button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.remove-button:hover {
+    background-color: #fecaca;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Add scroll indicator styles */
+.scroll-indicator {
+    display: none;
+}
+
+.scroll-hint {
+    text-align: right;
+    color: #dc2626;  /* Red color */
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* Remove any remaining borders */
+.tabulator * {
+    border-color: transparent !important;
+}
+
+/* Add description and disclaimer styles */
+.table-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.table-description a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.table-description a:hover {
+    text-decoration: underline;
+}
+
+.legal-disclaimer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.legal-disclaimer p {
+    margin: 0 0 10px 0;
+}
+
+.legal-disclaimer p:last-child {
+    margin-bottom: 0;
+}
