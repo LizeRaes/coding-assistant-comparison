@@ -21,20 +21,20 @@ Thank you for your interest in contributing to the **AI Coding Assistant Compari
 Each tool entry in `assistants.json` should follow this structure:
 ```json
 {
-      "Tool": "Cursor",
-      "Code Completion": "✅",
+      "Tool": "My New Code Assistant",
+      "Code Completion": "✅ (and fast)",
       "Chat": "✅",
-      "Smart Apply": "✅",
-      "Context Retrieval": "unknown (works great) / agent mode",
+      "Smart Apply": "edits files",
+      "Context Retrieval": "manual select / RAG (opt.)",
       "Output Not Copyrighted Guarantee": "✖️",
-      "Supported IDEs": "VSCode clone",
-      "Underlying Model": "Claude, GPT, Gemini, DeepSeek, custom model",
+      "Supported IDEs": "VSCode, IntelliJ, WebStorm",
+      "Underlying Model": "Claude, GPT-4",
       "On Prem Option": "✖️",
-      "Respects Code Flavor": "✅ rules file",
-      "Pricing": "free tier, 20$/month",
+      "Respects Code Flavor": "✅ config file",
+      "Pricing": "free tier, 15$/month",
       "Agent Mode": "✅",
-      "Controls Tools": "terminal, tests, compiler, pluggable MCP servers",
-      "Nice To Haves": "exceptionally good at propagating changes to all necessary files, intuitive 'Apply Diff' for each modified file",
-      "Watch Out": "VSCode clone (separate IDE), no IntelliJ support"
-    }
+      "Controls Tools": "terminal, tests, compiler",
+      "Nice To Haves": "great at refactoring, supports multiple languages",
+      "Watch Out": "no support for Visual Studio"
+}
 ```

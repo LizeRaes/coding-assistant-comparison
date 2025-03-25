@@ -1,22 +1,80 @@
 document.addEventListener("DOMContentLoaded", function () {
     let table;
-    let filterGroups = []; // Array of filter groups, each group has filters and operator
+    let filterGroups = [];
 
     // Initialize Tabulator table with pre-loaded data
     table = new Tabulator("#table", {
-        data: assistants, // This will be available from the JSON file
+        data: assistants,
         layout: "fitColumns",
+        height: "100%",
         columns: [
-            { title: "Tool", field: "Tool", formatter: "link", formatterParams: { urlField: "Website" }},
-            { title: "Pricing", field: "Pricing" },
-            { title: "Code Completion", field: "Code Completion" },
-            { title: "Chat", field: "Chat" },
-            { title: "Smart Apply", field: "Smart Apply" },
-            { title: "On Prem Option", field: "On Prem Option" },
-            { title: "Agent Mode", field: "Agent Mode" },
-            { title: "Watch Out", field: "Watch Out" },
+            { title: "Tool", field: "Tool", formatter: "link", formatterParams: { urlField: "Website" }, widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "Pricing", field: "Pricing", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "Code\nCompletion", field: "Code Completion", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Chat", field: "Chat", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Smart\nApply", field: "Smart Apply", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Context\nRetrieval", field: "Context Retrieval", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "Output Not\nCopyrighted", field: "Output Not Copyrighted Guarantee", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Supported\nIDEs", field: "Supported IDEs", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "Underlying\nModel", field: "Underlying Model", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "On Prem\nOption", field: "On Prem Option", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Respects\nCode Flavor", field: "Respects Code Flavor", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Agent\nMode", field: "Agent Mode", widthGrow: 1, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 12) : "";
+            }},
+            { title: "Controls\nTools", field: "Controls Tools", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "Nice To\nHaves", field: "Nice To Haves", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }},
+            { title: "Watch\nOut", field: "Watch Out", widthGrow: 2, formatter: function(cell) {
+                return cell.getValue() ? cell.getValue().toString().substring(0, 24) : "";
+            }}
         ],
+        rowHeight: 60, // Increase row height to accommodate two lines
     });
+
+    // Get all available fields for filtering
+    const availableFields = [
+        "Tool",
+        "Pricing",
+        "Code Completion",
+        "Chat",
+        "Smart Apply",
+        "Context Retrieval",
+        "Output Not Copyrighted Guarantee",
+        "Supported IDEs",
+        "Underlying Model",
+        "On Prem Option",
+        "Respects Code Flavor",
+        "Agent Mode",
+        "Controls Tools",
+        "Nice To Haves",
+        "Watch Out"
+    ];
 
     // Filtering logic
     function updateFilters() {
@@ -72,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const fieldSelect = document.createElement("select");
         fieldSelect.className = "p-2 border rounded";
-        ["Tool", "Pricing", "Code Completion", "Chat", "Smart Apply", "On Prem Option", "Agent Mode"].forEach(field => {
+        availableFields.forEach(field => {
             const option = document.createElement("option");
             option.value = field;
             option.textContent = field;
