@@ -20,10 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 field: "Tool", 
                 width: 120, 
                 frozen: true,
+                cssClass: "tool-column",
                 formatter: function(cell) {
                     const value = cell.getValue();
                     const homepage = cell.getData().Homepage;
-                    return homepage ? `<a href="${homepage}" target="_blank">${value}</a>` : value;
+                    return homepage ? 
+                        `<a href="${homepage}" target="_blank" style="font-size: 15px; font-weight: 800;">${value}</a>` : 
+                        `<div style="font-size: 15px; font-weight: 800;">${value}</div>`;
                 },
                 variableHeight: true
             },
@@ -53,13 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
             {title: "Watch\nOut", field: "Watch Out", width: 180, variableHeight: true},
         ],
         height: "100%",
-        rowFormatter:function(row){
-            // Add special styling for tool column cells
-            const cell = row.getCell("Tool");
-            if(cell) {
-                cell.getElement().style.backgroundColor = "#f3f4f6";
-            }
-        },
+        rowFormatter: function(row) {
+            const index = row.getPosition() + 1;
+            const colorClass = `row-color-${((index - 1) % 6) + 1}`;
+            row.getElement().classList.add(colorClass);
+        }
     });
 
     // Get all available fields for filtering
