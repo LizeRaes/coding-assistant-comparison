@@ -1,6 +1,8 @@
 # AI Coding Assistant Comparison
 
-Welcome to the **AI Coding Assistant Comparison**—a community-driven effort to keep track of the ever-evolving landscape of AI-powered coding tools.
+👉 **[Visit the filterable comparison table at aitoolcomparator.com](https://aitoolcomparator.com)** 
+
+This repository contains the dataset powering a community-maintained comparison of AI coding assistants. The comparison table helps developers find the right tool by filtering features that matter to them.
 
 ## 🌟 Why This Exists
 With AI-powered coding assistants improving at a rapid pace, developers need an up-to-date, objective comparison of available tools to choose the right one. This repository aims to be the go-to resource for:
@@ -23,7 +25,7 @@ This comparison is only as accurate as its last update! Tools evolve fast, and w
 
 **It's easy to contribute!** See the step-by-step guide in [CONTRIBUTING.md](docs/CONTRIBUTING.md) to add or update information.
 
-## 📊 What’s Compared?
+## 📊 What's Compared?
 | Column | Description |
 |--------|------------|
 | **Code Completion** | Present or not? |
@@ -43,11 +45,11 @@ This comparison is only as accurate as its last update! Tools evolve fast, and w
 | **Watch Out** | Potential pitfalls, limitations, or concerns. |
 
 ## ✨ Get Involved
-Want to help? Here’s how:
+Want to help? Here's how:
 
 👩‍💻 **Developers**: Test AI tools and report your findings!  
 🔍 **AI Enthusiasts**: Spot and report inaccuracies.  
-🔧 **Tool Creators**: Keep your tool’s data fresh.  
+🔧 **Tool Creators**: Keep your tool's data fresh.  
 📢 **Influencers & Bloggers**: Share this project to help developers choose wisely.
 
 ✅ **Contribute easily**: Check the [CONTRIBUTING.md](docs/CONTRIBUTING.md) guide for how to submit your updates.
@@ -55,7 +57,7 @@ Want to help? Here’s how:
 ⭐ **Star This Repo & Stay Updated!**
 This project grows with community contributions. If you find it useful, give it a ⭐ on GitHub! This helps others discover it and keeps the project alive.
 
-👉 **Visit the live table at:** [epic.engineering/coding-assistant-comparison](https://epic.engineering/coding-assistant-comparison) 🚀
+👉 **Visit the comparison table at:** [aitoolcomparator.com](https://aitoolcomparator.com) 🚀
 
 ---
 
