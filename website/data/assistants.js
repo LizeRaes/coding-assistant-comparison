@@ -182,6 +182,24 @@ const assistants = [
       "Controls Tools": "apply OpenRewrite recipes",
       "Nice To Haves": "tailored for OpenRewrite tried-and-tested recipes (migration, exploration) to huge codebases",
       "Watch Out": "not a general coding assistant"
+    },
+    {
+      "Tool": "Claude Code",
+      "Homepage": "https://www.anthropic.com/claude-code",
+      "Code Completion": "✖ ",
+      "Chat": "✅",
+      "Smart Apply": "edits files️",
+      "Context Retrieval": "Local files in project directory, MCP",
+      "Output Not Copyrighted Guarantee": "✖ ",
+      "Supported IDEs": "Claude Code is a terminal CLI but has an IntelliJ and VSCode plugins",
+      "Underlying Model": "Claude",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✅ CLAUDE.md rules file",
+      "Pricing": "Included in Claude subscriptions or Pay-as-you-go API pricing",
+      "Agent Mode": "✅ ",
+      "Controls Tools": "️When using the IDE-plugin it provides diff viewing and context selection",
+      "Nice To Haves": "CLI integrates into GitHub and GitLab",
+      "Watch Out": "Only runs on Mac or Linux. On Windows WSL must be used"
     }
   ]
   
