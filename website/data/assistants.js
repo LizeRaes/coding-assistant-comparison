@@ -1,5 +1,23 @@
 const assistants = [
     {
+      "Tool": "Claude Code",
+      "Homepage": "https://www.anthropic.com/claude-code",
+      "Code Completion": "✖️",
+      "Chat": "✅",
+      "Smart Apply": "edits files️. Diff viewing with IDE-plugin",
+      "Context Retrieval": "manual select with IDE-plugin, MCP",
+      "Output Not Copyrighted Guarantee": "✖️",
+      "Supported IDEs": "Terminal CLI, IntelliJ and VSCode",
+      "Underlying Model": "Claude",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✅ CLAUDE.md rules file",
+      "Pricing": "In Claude subscription or pay-as-you-go",
+      "Agent Mode": "✅",
+      "Controls Tools": "all terminal tools if allowed",
+      "Nice To Haves": "CLI integrates into GitHub and GitLab",
+      "Watch Out": "Only runs on Mac or Linux. On Windows WSL must be used"
+    },
+    {
       "Tool": "Cursor",
       "Homepage": "https://www.cursor.com/",
       "PricingLink": "https://www.cursor.com/pricing",
@@ -17,24 +35,6 @@ const assistants = [
       "Controls Tools": "terminal, tests, compiler, pluggable MCP servers",
       "Nice To Haves": "great at propagating changes to all necessary files, intuitive 'Apply Diff' for each modified file",
       "Watch Out": "VSCode clone (separate IDE), no IntelliJ support"
-    },
-    {
-      "Tool": "Github Copilot",
-      "Homepage": "https://github.com/features/copilot",
-      "Code Completion": "✅",
-      "Chat": "✅",
-      "Smart Apply": "✖️",
-      "Context Retrieval": "unknown (not great)",
-      "Output Not Copyrighted Guarantee": "✅ (opt-in)",
-      "Supported IDEs": "supports almost any IDE",
-      "Underlying Model": "Claude, GPT, Gemini",
-      "On Prem Option": "✖️",
-      "Respects Code Flavor": "✖️",
-      "Pricing": "free tier, 10$/month",
-      "Agent Mode": "",
-      "Controls Tools": "✖️",
-      "Nice To Haves": "one of the first ones around and by far the most used",
-      "Watch Out": "hallucinates methods (can't look over file boundaries)"
     },
     {
       "Tool": "DevoxxGenie",
@@ -55,22 +55,22 @@ const assistants = [
       "Watch Out": "no code completion"
     },
     {
-      "Tool": "JUNIE",
-      "Homepage": "https://www.jetbrains.com/junie/",
-      "Code Completion": "✖️",
+      "Tool": "Github Copilot",
+      "Homepage": "https://github.com/features/copilot",
+      "Code Completion": "✅",
       "Chat": "✅",
-      "Smart Apply": "edits files",
-      "Context Retrieval": "custom / agent mode",
-      "Output Not Copyrighted Guarantee": "✖️",
-      "Supported IDEs": "IntelliJ, WebStorm, PyCharm (more underway)",
-      "Underlying Model": "Claude-3.7",
+      "Smart Apply": "✖️",
+      "Context Retrieval": "unknown (not great)",
+      "Output Not Copyrighted Guarantee": "✅ (opt-in)",
+      "Supported IDEs": "supports almost any IDE",
+      "Underlying Model": "Claude, GPT, Gemini",
       "On Prem Option": "✖️",
-      "Respects Code Flavor": "✅ guidelines.md",
-      "Pricing": "in preview",
-      "Agent Mode": "✅",
-      "Controls Tools": "terminal, tests, compiler",
-      "Nice To Haves": "runs all tests each time (slower but quality guarantee), can later integrate deterministic IDE functionality",
-      "Watch Out": "not on Windows, still in preview"
+      "Respects Code Flavor": "✖️",
+      "Pricing": "free tier, 10$/month",
+      "Agent Mode": "",
+      "Controls Tools": "✖️",
+      "Nice To Haves": "one of the first ones around and by far the most used",
+      "Watch Out": "hallucinates methods (can't look over file boundaries)"
     },
     {
       "Tool": "JetBrains AI Assistant",
@@ -89,6 +89,24 @@ const assistants = [
       "Controls Tools": "✖️",
       "Nice To Haves": "focus on supporting existing big customers",
       "Watch Out": ""
+    },
+    {
+      "Tool": "JUNIE",
+      "Homepage": "https://www.jetbrains.com/junie/",
+      "Code Completion": "✖️",
+      "Chat": "✅",
+      "Smart Apply": "edits files",
+      "Context Retrieval": "custom / agent mode",
+      "Output Not Copyrighted Guarantee": "✖️",
+      "Supported IDEs": "IntelliJ, WebStorm, PyCharm (more underway)",
+      "Underlying Model": "Claude-3.7",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✅ guidelines.md",
+      "Pricing": "in preview",
+      "Agent Mode": "✅",
+      "Controls Tools": "terminal, tests, compiler",
+      "Nice To Haves": "runs all tests each time (slower but quality guarantee), can later integrate deterministic IDE functionality",
+      "Watch Out": "not on Windows, still in preview"
     },
     {
       "Tool": "Qodo (formerly Codium)",
@@ -110,7 +128,7 @@ const assistants = [
       "Watch Out": ""
     },
     {
-      "Tool": "Codeium's Windsurf AI",
+      "Tool": "Windsurf",
       "Homepage": "https://codeium.com/windsurf",
       "PricingLink": "https://codeium.com/pricing",
       "Code Completion": "✅",
@@ -127,24 +145,6 @@ const assistants = [
       "Controls Tools": "terminal, tests, compiler, pluggable MCP servers",
       "Nice To Haves": "trained on permissive license repos only (no copyright issues)",
       "Watch Out": "custom IDE"
-    },
-    {
-      "Tool": "Replit",
-      "Homepage": "https://replit.com/",
-      "Code Completion": "",
-      "Chat": "",
-      "Smart Apply": "",
-      "Context Retrieval": "permissive license trained only",
-      "Output Not Copyrighted Guarantee": "",
-      "Supported IDEs": "",
-      "Underlying Model": "custom OSS model",
-      "On Prem Option": "✖️",
-      "Respects Code Flavor": "✖️",
-      "Pricing": "20$/month",
-      "Agent Mode": "✅",
-      "Controls Tools": "built-in execution environment",
-      "Nice To Haves": "builds project for your review, works well for standard code (user validation, webshop, etc.)",
-      "Watch Out": "supports limited languages, no Java! fails on non-standard use cases"
     },
     {
       "Tool": "Devin",
@@ -182,6 +182,24 @@ const assistants = [
       "Controls Tools": "apply OpenRewrite recipes",
       "Nice To Haves": "tailored for OpenRewrite tried-and-tested recipes (migration, exploration) to huge codebases",
       "Watch Out": "not a general coding assistant"
+    },
+    {
+      "Tool": "Replit",
+      "Homepage": "https://replit.com/",
+      "Code Completion": "",
+      "Chat": "",
+      "Smart Apply": "",
+      "Context Retrieval": "permissive license trained only",
+      "Output Not Copyrighted Guarantee": "",
+      "Supported IDEs": "",
+      "Underlying Model": "custom OSS model",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✖️",
+      "Pricing": "20$/month",
+      "Agent Mode": "✅",
+      "Controls Tools": "built-in execution environment",
+      "Nice To Haves": "builds project for your review, works well for standard code (user validation, webshop, etc.)",
+      "Watch Out": "supports limited languages, no Java! fails on non-standard use cases"
     }
   ]
   
