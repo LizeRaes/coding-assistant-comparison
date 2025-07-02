@@ -10,6 +10,7 @@
     <script data-goatcounter="https://113322.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="code-assist.png">
 </head>
 <body class="bg-gray-100 text-gray-900">
     <div class="container mx-auto p-6">
@@ -21,18 +22,13 @@
         </div>
         
         <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-            <div class="flex gap-4 items-center mb-4">
-                <label class="font-semibold">Filter:</label>
-                <div class="filter-example-container">
-                    <span class="text-gray-600">Example:</span>
-                    <img src="filterExample.png" alt="Filter example showing a checkmark" class="filter-example-image">
-                </div>
-                <button id="clearFilters" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 hidden">Clear Filters</button>
-            </div>
+            <div id="quick-filters-bar" class="mb-4"></div>
+            <div id="advanced-filters-toggle" class="mb-2"></div>
+            <button id="clearFilters" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 hidden">Clear Filters</button>
             <div id="filters" class="mb-4"></div>
-            <div class="flex">
+            <!--<div class="flex">
                 <button id="addFilter" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">+ Add Filter Criterium</button>
-            </div>
+            </div>-->
         </div>
 
         <!-- Table -->
