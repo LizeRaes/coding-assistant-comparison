@@ -118,7 +118,7 @@ const assistants = [
       "Smart Apply": "edits files",
       "Context Retrieval": "RAG / agent mode",
       "Output Not Copyrighted Guarantee": "✅ (trained on permissive license code)",
-      "Supported IDEs": "custom IDE",
+      "Supported IDEs": "custom IDE, JetBrains IDEs",
       "Underlying Model": "custom model",
       "On Prem Option": "✅ (on request, own hardware)",
       "Respects Code Flavor": "✅ fine-tuning on repo",
