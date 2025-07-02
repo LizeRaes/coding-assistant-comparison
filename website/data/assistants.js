@@ -80,7 +80,7 @@ const assistants = [
       "Smart Apply": "✅ (error prone)",
       "Context Retrieval": "custom",
       "Output Not Copyrighted Guarantee": "✖️",
-      "Supported IDEs": "IntelliJ and most JetBrains IDEs",
+      "Supported IDEs": "IntelliJ and most JetBrains IDEs, VSCode",
       "Underlying Model": "custom model",
       "On Prem Option": "only in full line code compl.",
       "Respects Code Flavor": "✖️",
