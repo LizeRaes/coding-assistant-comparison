@@ -88,7 +88,7 @@ const assistants = [
       "Pricing": "Free for personal Google account (60 requests/minute, 1,000/day). Paid tiers on GCP",
       "Agent Mode": "✅",
       "Controls Tools": "✅ (runs shell commands, interacts with files, fetches web content, and can integrate MCP)",
-      "Nice To Haves": "GitHub integration, open source, large context window (1 million tokens), cross-file analysis, native Windows support",
+      "Nice To Haves": "Open source, large context window (1 million tokens), cross-file analysis, native Windows support",
       "Watch Out": "Primarily a text-based interface, which may be less intuitive for users accustomed to graphical interfaces."
     }
     {
