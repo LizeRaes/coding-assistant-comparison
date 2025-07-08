@@ -85,7 +85,7 @@ const assistants = [
       "Underlying Model": "Gemini",
       "On Prem Option": "✖️",
       "Respects Code Flavor": "✅ (customizable via GEMINI.md)",
-      "Pricing": "Free for personal Google account (60 requests/minute, 1,000/day). Paid tiers on GCP",
+      "Pricing": "Free tier for personal Google account (60 requests/minute, 1,000/day). Paid tiers for increased quota.",
       "Agent Mode": "✅",
       "Controls Tools": "✅ (runs shell commands, interacts with files, fetches web content, and can integrate MCP)",
       "Nice To Haves": "Open source, large context window (1 million tokens), cross-file analysis, native Windows support",
