@@ -140,7 +140,7 @@ const assistants = [
       "Underlying Model": "Claude 3.7/4.0",
       "On Prem Option": "✖️",
       "Respects Code Flavor": "✅ guidelines.md",
-      "Pricing": "In AI Pro (from 100€/year)",
+      "Pricing": "free tier, AI Pro (100€/year), AI Ultimate (200€/year)",
       "Agent Mode": "✅",
       "Controls Tools": "terminal, tests, compiler",
       "Nice To Haves": "runs all tests each time (slower but quality guarantee), can later integrate deterministic IDE functionality",
