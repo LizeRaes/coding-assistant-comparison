@@ -73,6 +73,25 @@ const assistants = [
       "Watch Out": "no code completion"
     },
     {
+      "Tool": "Gemini CLI",
+      "Homepage": "https://github.com/google-gemini/gemini-cli",
+      "PricingLink": "https://ai.google.dev/gemini-api/docs/pricing",
+      "Code Completion": "✅",
+      "Chat": "✅",
+      "Smart Apply": "✅ (edits files with user confirmation)",
+      "Context Retrieval": "✅ Google Search and MCP",
+      "Output Not Copyrighted Guarantee": "✖️",
+      "Supported IDEs": "Terminal CLI, VS Code, IntelliJ, etc.",
+      "Underlying Model": "Gemini 2.5 Pro (with a generous free tier)",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✅ (customizable via GEMINI.md)",
+      "Pricing": "Free for personal Google account (60 requests/minute, 1,000/day). Paid tiers on GCP",
+      "Agent Mode": "✅",
+      "Controls Tools": "✅ (runs shell commands, interacts with files, fetches web content, and can integrate MCP)",
+      "Nice To Haves": "GitHub integration, open source, large context window (1 million tokens), cross-file analysis, native Windows support",
+      "Watch Out": "Primarily a text-based interface, which may be less intuitive for users accustomed to graphical interfaces."
+    }
+    {
       "Tool": "Github Copilot",
       "Homepage": "https://github.com/features/copilot",
       "Code Completion": "✅",
