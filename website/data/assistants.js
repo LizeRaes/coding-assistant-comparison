@@ -82,7 +82,7 @@ const assistants = [
       "Context Retrieval": "✅ Google Search and MCP",
       "Output Not Copyrighted Guarantee": "✖️",
       "Supported IDEs": "Terminal CLI, VS Code, IntelliJ, etc.",
-      "Underlying Model": "Gemini 2.5 Pro (with a generous free tier)",
+      "Underlying Model": "Gemini (with a generous free tier)",
       "On Prem Option": "✖️",
       "Respects Code Flavor": "✅ (customizable via GEMINI.md)",
       "Pricing": "Free for personal Google account (60 requests/minute, 1,000/day). Paid tiers on GCP",
