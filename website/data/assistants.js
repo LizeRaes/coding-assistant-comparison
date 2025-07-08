@@ -266,7 +266,7 @@ const assistants = [
       "Chat": "",
       "Smart Apply": "",
       "Context Retrieval": "permissive license trained only",
-      "Output Not Copyrighted Guarantee": "",
+      "Output Not Copyrighted Guarantee": "✅",
       "Supported IDEs": "",
       "Underlying Model": "custom OSS model",
       "On Prem Option": "✖️",
