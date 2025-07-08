@@ -79,7 +79,7 @@ const assistants = [
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (edits files with user confirmation)",
-      "Context Retrieval": "✅ Google Search and MCP",
+      "Context Retrieval": "✅ manual selection, Google Search, MCP and automatic discovery",
       "Output Not Copyrighted Guarantee": "✖️",
       "Supported IDEs": "Terminal CLI, VS Code, IntelliJ, etc.",
       "Underlying Model": "Gemini",
