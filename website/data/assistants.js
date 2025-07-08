@@ -128,8 +128,8 @@ const assistants = [
       "Watch Out": "Mainly intended for small features and repetitive work"
     },    
     {
-      "Tool": "JUNIE",
-      "Homepage": "www.jetbrains.com/junie/",
+      "Tool": "Junie",
+      "Homepage": "https://www.jetbrains.com/junie/",
       "PricingLink": "https://www.jetbrains.com/junie/#pricing",
       "Code Completion": "✅",
       "Chat": "✅",
