@@ -76,7 +76,7 @@ const assistants = [
       "Tool": "Gemini CLI",
       "Homepage": "https://github.com/google-gemini/gemini-cli",
       "PricingLink": "https://ai.google.dev/gemini-api/docs/pricing",
-      "Code Completion": "✅",
+      "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅ (edits files with user confirmation)",
       "Context Retrieval": "✅ manual selection, Google Search, MCP and automatic discovery",
