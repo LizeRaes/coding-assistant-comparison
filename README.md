@@ -1,6 +1,6 @@
 # AI Coding Assistant Comparison
 
-👉 **[Visit the filterable comparison table at aitoolcomparator.com](https://aitoolcomparator.com)** 
+👉 **Visit the filterable comparison table at [aitoolcomparator.com](https://aitoolcomparator.com)** 
 
 This repository contains the dataset powering a community-maintained comparison of AI coding assistants. The comparison table helps developers find the right tool by filtering features that matter to them.
 
