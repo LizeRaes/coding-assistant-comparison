@@ -104,7 +104,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      /* No custom padding, let section handle it */
     }
     
     .pricing, .open-source {
@@ -225,16 +227,18 @@
       <p>Gemini CLI is a command line tool that leverages Google's Gemini model to generate code, chat, and apply changes to files. Star features are a huge context window and MCP server integration. It can be used in combination with Gemini Code Assist plugin to be used in different IDEs and additionally provide code completion.</p>
     </section>
 
-    <div class="pricing-open-source">
-      <div class="pricing">
-        <h3>Pricing</h3>
-        <p>Free tier for personal Google account (60 requests/minute, 1,000/day). Paid tiers for increased quota.</p><p><a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/quota-and-pricing.md" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <p>Free tier for personal Google account (60 requests/minute, 1,000/day). Paid tiers for increased quota.</p><p><a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/quota-and-pricing.md" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>✅</p>
+        </div>
       </div>
-      <div class="open-source">
-        <h3>Open Source</h3>
-        <p>✅</p>
-      </div>
-    </div>
+    </section>
 
     <section>
       <h2>Features</h2>

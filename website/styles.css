@@ -280,13 +280,18 @@ h1 {
     word-wrap: break-word;
 }
 
+/* Remove display: block and text-align from links in table cells */
 .tabulator .tabulator-cell a {
     color: white;
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 4px;
-    display: block;
-    text-align: center;
+    /* Remove display: block and text-align: center */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
+    height: 100%;
     line-height: 24px;
 }
 
@@ -459,4 +464,41 @@ h1 {
 
 .legal-disclaimer p:last-child {
     margin-bottom: 0;
+}
+
+/* Vertically center all Tabulator table cells and headers */
+.tabulator-cell, .tabulator-header .tabulator-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  vertical-align: middle !important;
+  box-sizing: border-box;
+}
+
+/* Vertically center all direct children of cells and headers */
+.tabulator-cell > *, .tabulator-header .tabulator-col > * {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* For left-aligned columns (like Tool), override to left-align but still center vertically */
+.tabulator-cell.tool-column, .tabulator-header .tabulator-col.tool-column {
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+.tabulator-cell.tool-column > *, .tabulator-header .tabulator-col.tool-column > * {
+  justify-content: flex-start !important;
+}
+
+/* For logo column, keep center alignment */
+.tabulator-cell.logo-column, .tabulator-header .tabulator-col.logo-column {
+  justify-content: center;
+}
+.tabulator-cell.logo-column > *, .tabulator-header .tabulator-col.logo-column > * {
+  justify-content: center !important;
 }

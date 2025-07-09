@@ -205,7 +205,9 @@ def generate_tool_page(tool_data, output_dir):
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      /* No custom padding, let section handle it */
     }}
     
     .pricing, .open-source {{
@@ -326,16 +328,18 @@ def generate_tool_page(tool_data, output_dir):
       <p>{summary}</p>
     </section>
 
-    <div class="pricing-open-source">
-      <div class="pricing">
-        <h3>Pricing</h3>
-        {pricing_html}
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          {pricing_html}
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>{open_source if open_source else 'Open source information not available'}</p>
+        </div>
       </div>
-      <div class="open-source">
-        <h3>Open Source</h3>
-        <p>{open_source if open_source else 'Open source information not available'}</p>
-      </div>
-    </div>
+    </section>
 
     <section>
       <h2>Features</h2>

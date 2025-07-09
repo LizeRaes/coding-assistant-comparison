@@ -42,10 +42,10 @@ function getTableColumns() {
                 const logoUrl = cell.getValue();
                 const toolName = cell.getData().Tool;
                 if (logoUrl) {
-                    return `<img src="${logoUrl}" alt="Logo" style="width: 40px; height: 40px; object-fit: contain; display: block; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">`;
+                    return `<div style="width: 40px; height: 40px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><img src="${logoUrl}" alt="Logo" style="width: 32px; height: 32px; object-fit: contain; display: block;"></div>`;
                 }
                 const firstLetter = toolName ? toolName.charAt(0).toUpperCase() : '?';
-                return `<div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; font-weight: 900; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">${firstLetter}</div>`;
+                return `<div style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; font-weight: 900; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); background: #2563eb; border-radius: 8px;">${firstLetter}</div>`;
             },
             variableHeight: true,
             headerSort: false
@@ -58,15 +58,27 @@ function getTableColumns() {
             cssClass: "tool-column",
             formatter: function(cell) {
                 const value = cell.getValue();
-                const detailsLink = cell.getData()["Details Link"];
-                if (detailsLink) {
-                    return `<a href="${detailsLink}" target="_blank" style="font-size: 15px; font-weight: 800;">${value}</a>`;
-                }
                 const homepage = cell.getData().Homepage;
-                return homepage ? 
-                    `<a href="${homepage}" target="_blank" style="font-size: 15px; font-weight: 800;">${value}</a>` : 
-                    `<div style="font-size: 15px; font-weight: 800;">${value}</div>`;
+                const href = homepage ? homepage : '#';
+                const tabIndex = homepage ? '' : 'tabindex="-1"';
+                return `<a href="${href}" ${tabIndex} target="_blank" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 15px; font-weight: 800; color: white; text-decoration: underline dotted;">${value}</a>`;
             },
+            variableHeight: true
+        },
+        {
+            title: "Details", 
+            field: "Details Link", 
+            width: 110, 
+            minWidth: 100,
+            cssClass: "details-link-column",
+            formatter: function(cell) {
+                const detailsLink = cell.getValue();
+                if (detailsLink) {
+                    return `<a href="${detailsLink}" target="_blank" title="View details" style="color: white; font-weight: 400; text-decoration: underline dotted; font-size: 15px; display: inline-flex; align-items: center; gap: 4px;">Details <span style='font-size: 1.1em;'>↗</span></a>`;
+                }
+                return '';
+            },
+            headerSort: false,
             variableHeight: true
         },
         {

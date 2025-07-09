@@ -104,7 +104,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      /* No custom padding, let section handle it */
     }
     
     .pricing, .open-source {
@@ -213,7 +215,7 @@
     <header>
       <h1>Jules</h1>
       <p><a href="https://jules.google/" target="_blank" rel="noopener">Official Website ↗</a></p>
-      
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvAXEz4EsU3RQHCV96BAfJusei09ZBjQOG2g&s" alt="Jules logo" class="tool-logo" />
       <div class="tool-info">
         
         
@@ -225,16 +227,18 @@
       <p>No summary provided</p>
     </section>
 
-    <div class="pricing-open-source">
-      <div class="pricing">
-        <h3>Pricing</h3>
-        <p>Free (beta)</p>
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <p>Free (beta)</p>
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>✖️</p>
+        </div>
       </div>
-      <div class="open-source">
-        <h3>Open Source</h3>
-        <p>Open source information not available</p>
-      </div>
-    </div>
+    </section>
 
     <section>
       <h2>Features</h2>

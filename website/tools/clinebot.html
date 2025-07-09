@@ -104,7 +104,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      /* No custom padding, let section handle it */
     }
     
     .pricing, .open-source {
@@ -213,7 +215,7 @@
     <header>
       <h1>Cline.bot</h1>
       <p><a href="https://cline.bot/" target="_blank" rel="noopener">Official Website ↗</a></p>
-      
+      <img src="https://cline.bot/assets/icons/favicon-256x256.png" alt="Cline.bot logo" class="tool-logo" />
       <div class="tool-info">
         
         
@@ -225,16 +227,18 @@
       <p>No summary provided</p>
     </section>
 
-    <div class="pricing-open-source">
-      <div class="pricing">
-        <h3>Pricing</h3>
-        <p>free (open source)</p>
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <p>free (open source)</p>
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>✅</p>
+        </div>
       </div>
-      <div class="open-source">
-        <h3>Open Source</h3>
-        <p>Open source information not available</p>
-      </div>
-    </div>
+    </section>
 
     <section>
       <h2>Features</h2>

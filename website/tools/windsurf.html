@@ -104,7 +104,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+      /* No custom padding, let section handle it */
     }
     
     .pricing, .open-source {
@@ -213,7 +215,7 @@
     <header>
       <h1>Windsurf</h1>
       <p><a href="https://codeium.com/windsurf" target="_blank" rel="noopener">Official Website ↗</a></p>
-      
+      <img src="https://exafunction.github.io/public/brand/windsurf-black-symbol.png" alt="Windsurf logo" class="tool-logo" />
       <div class="tool-info">
         
         
@@ -225,16 +227,18 @@
       <p>No summary provided</p>
     </section>
 
-    <div class="pricing-open-source">
-      <div class="pricing">
-        <h3>Pricing</h3>
-        <p>free tier, 15$/month</p><p><a href="https://codeium.com/pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <p>free tier, 15$/month</p><p><a href="https://codeium.com/pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>✖️</p>
+        </div>
       </div>
-      <div class="open-source">
-        <h3>Open Source</h3>
-        <p>Open source information not available</p>
-      </div>
-    </div>
+    </section>
 
     <section>
       <h2>Features</h2>
