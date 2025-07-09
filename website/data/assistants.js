@@ -2,6 +2,7 @@ const assistants = [
     {
       "Tool": "Claude Code",
       "Homepage": "https://www.anthropic.com/claude-code",
+      "Details Link": "tools/claude-code.html",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅ edits files️. Diff viewing with IDE-plugin",
@@ -20,6 +21,7 @@ const assistants = [
     {
       "Tool": "Cline.bot",
       "Homepage": "https://cline.bot/",
+      "Details Link": "tools/clinebot.html",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (diff preview)",
@@ -39,6 +41,7 @@ const assistants = [
       "Tool": "Cursor",
       "Homepage": "https://www.cursor.com/",
       "PricingLink": "https://www.cursor.com/pricing",
+      "Details Link": "tools/cursor.html",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅",
@@ -57,6 +60,7 @@ const assistants = [
     {
       "Tool": "DevoxxGenie",
       "Homepage": "https://github.com/devoxx/DevoxxGenieIDEAPlugin",
+      "Details Link": "tools/devoxxgenie.html",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✖️",
@@ -79,6 +83,8 @@ const assistants = [
       "Logo Url": "https://barnes.tech/Gemini%20CLI.png",
       "Version": "0.1.9",
       "Last Updated": "2025-07-09",
+      "Summary": "Gemini CLI is a command line tool that leverages Google's Gemini model to generate code, chat, and apply changes to files. Star features are a huge context window and MCP server integration. It can be used in combination with Gemini Code Assist plugin to be used in different IDEs and additionally provide code completion.",
+      "Details Link": "tools/gemini-cli.html",
       "Code Completion": {
         "short": "✅️(in combo with Gemini Code)",
         "long": "Gemini CLI as a command line tool does not offer inline code completions, but can do so in combination with Gemini Code Assist API plugin."
@@ -104,6 +110,7 @@ const assistants = [
         "short": "free tier, pay-as-you-go",
         "long": "Free tier for personal Google account (60 requests/minute, 1,000/day). Paid tiers for increased quota."
       },
+      "Open Source": "✅",
       "Agent Mode": "✅",
       "Controls Tools": {
         "short": "terminal, web search, MCP",
@@ -118,6 +125,7 @@ const assistants = [
     {
       "Tool": "Github Copilot",
       "Homepage": "https://github.com/features/copilot",
+      "Details Link": "tools/github-copilot.html",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✖️",
@@ -136,6 +144,7 @@ const assistants = [
     {
       "Tool": "JetBrains AI Assistant",
       "Homepage": "https://www.jetbrains.com/ai/",
+      "Details Link": "tools/jetbrains-ai-assistant.html",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (error prone)",
@@ -155,6 +164,7 @@ const assistants = [
       "Tool": "Jules",
       "Homepage": "https://jules.google/",
       "PricingLink": "",
+      "Details Link": "tools/jules.html",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅(edits files)",
@@ -174,6 +184,7 @@ const assistants = [
       "Tool": "Junie",
       "Homepage": "https://www.jetbrains.com/junie/",
       "PricingLink": "https://www.jetbrains.com/junie/#pricing",
+      "Details Link": "tools/junie.html",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅ (diff viewer)",
@@ -193,6 +204,7 @@ const assistants = [
       "Tool": "Qodo (formerly Codium)",
       "Homepage": "https://www.qodo.ai/",
       "PricingLink": "https://www.qodo.ai/pricing/",
+      "Details Link": "tools/qodo-formerly-codium.html",
       "Code Completion": "✅ (and fast)",
       "Chat": "✅",
       "Smart Apply": "changes in new file (show diff)",
@@ -212,6 +224,7 @@ const assistants = [
       "Tool": "Windsurf",
       "Homepage": "https://codeium.com/windsurf",
       "PricingLink": "https://codeium.com/pricing",
+      "Details Link": "tools/windsurf.html",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (edits files)",
@@ -231,6 +244,7 @@ const assistants = [
       "Tool": "Base44",
       "Homepage": "https://base44.com/",
       "PricingLink": "https://base44.com/pricing",
+      "Details Link": "tools/base44.html",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -250,6 +264,7 @@ const assistants = [
       "Tool": "Devin",
       "Homepage": "https://devin.ai/",
       "PricingLink": "https://devin.ai/pricing",
+      "Details Link": "tools/devin.html",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -269,6 +284,7 @@ const assistants = [
       "Tool": "Lovable",
       "Homepage": "https://lovable.dev/",
       "PricingLink": "https://lovable.dev/pricing",
+      "Details Link": "tools/lovable.html",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -287,6 +303,7 @@ const assistants = [
     {
       "Tool": "Moddy",
       "Homepage": "https://www.moderne.io/",
+      "Details Link": "tools/moddy.html",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -305,6 +322,7 @@ const assistants = [
     {
       "Tool": "Replit",
       "Homepage": "https://replit.com/",
+      "Details Link": "tools/replit.html",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",

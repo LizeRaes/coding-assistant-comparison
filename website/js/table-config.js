@@ -20,6 +20,12 @@ function createShortLongFormatter(field) {
     };
 }
 
+// --- Load tool page map ---
+let toolPageMap = {};
+fetch('/tools/tool_page_map.json')
+  .then(res => res.json())
+  .then(map => { toolPageMap = map; if(window.table) window.table.redraw(true); });
+
 /**
  * Get the table column configuration
  * @returns {Array} Array of column definitions for Tabulator
@@ -52,6 +58,10 @@ function getTableColumns() {
             cssClass: "tool-column",
             formatter: function(cell) {
                 const value = cell.getValue();
+                const detailsLink = cell.getData()["Details Link"];
+                if (detailsLink) {
+                    return `<a href="${detailsLink}" target="_blank" style="font-size: 15px; font-weight: 800;">${value}</a>`;
+                }
                 const homepage = cell.getData().Homepage;
                 return homepage ? 
                     `<a href="${homepage}" target="_blank" style="font-size: 15px; font-weight: 800;">${value}</a>` : 

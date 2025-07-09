@@ -1,0 +1,18 @@
+{
+  "Claude Code": "tools/claude-code.html",
+  "Cline.bot": "tools/clinebot.html",
+  "Cursor": "tools/cursor.html",
+  "DevoxxGenie": "tools/devoxxgenie.html",
+  "Gemini CLI": "tools/gemini-cli.html",
+  "Github Copilot": "tools/github-copilot.html",
+  "JetBrains AI Assistant": "tools/jetbrains-ai-assistant.html",
+  "Jules": "tools/jules.html",
+  "Junie": "tools/junie.html",
+  "Qodo (formerly Codium)": "tools/qodo-formerly-codium.html",
+  "Windsurf": "tools/windsurf.html",
+  "Base44": "tools/base44.html",
+  "Devin": "tools/devin.html",
+  "Lovable": "tools/lovable.html",
+  "Moddy": "tools/moddy.html",
+  "Replit": "tools/replit.html"
+}
