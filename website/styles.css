@@ -46,9 +46,33 @@ h1 {
     display: none !important;
 }
 
-.tabulator .tabulator-cell[data-field="Tool"] {
+/* Logo column specific styles */
+.tabulator .tabulator-cell[data-field="Logo Url"] {
     position: sticky !important;
     left: 0;
+    z-index: 2;
+    margin: 2px 2px 2px 4px;
+    text-align: center;
+    vertical-align: middle;
+    height: 80px !important;
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+    position: relative !important;
+}
+
+.tabulator .tabulator-header .tabulator-col[data-field="Logo Url"] {
+    position: sticky !important;
+    left: 0;
+    z-index: 4;
+    margin: 0 2px 0 4px;
+    background-color: #1e40af !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+/* Update tool column positioning to account for logo column */
+.tabulator .tabulator-cell[data-field="Tool"] {
+    position: sticky !important;
+    left: 60px;
     z-index: 2;
     margin: 2px 2px 2px 4px;
     text-align: center;
@@ -58,7 +82,7 @@ h1 {
 
 .tabulator .tabulator-header .tabulator-col[data-field="Tool"] {
     position: sticky !important;
-    left: 0;
+    left: 60px;
     z-index: 4;
     margin: 0 2px 0 4px;
     background-color: #1e40af !important;
@@ -184,6 +208,43 @@ h1 {
     font-size: 15px !important;
     font-weight: 800 !important;
     color: white !important;
+}
+
+/* Logo column specific styles with maximum specificity */
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+1) .tabulator-cell[data-field="Logo Url"] {
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+2) .tabulator-cell[data-field="Logo Url"] {
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+3) .tabulator-cell[data-field="Logo Url"] {
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+4) .tabulator-cell[data-field="Logo Url"] {
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n+5) .tabulator-cell[data-field="Logo Url"] {
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+.tabulator .tabulator-table .tabulator-row:nth-child(6n) .tabulator-cell[data-field="Logo Url"] {
+    background-color: #f8fafc !important;
+    border-right: 2px solid #e2e8f0 !important;
+}
+
+/* Hover tooltip for short/long cells */
+.short-long-cell {
+    position: relative;
+    cursor: help;
 }
 
 /* Base cell styles */

@@ -73,6 +73,49 @@ const assistants = [
       "Watch Out": "no code completion"
     },
     {
+      "Tool": "Gemini CLI",
+      "Homepage": "https://github.com/google-gemini/gemini-cli",
+      "PricingLink": "https://github.com/google-gemini/gemini-cli/blob/main/docs/quota-and-pricing.md",
+      "Logo Url": "https://barnes.tech/Gemini%20CLI.png",
+      "Version": "0.1.9",
+      "Last Updated": "2025-07-09",
+      "Code Completion": {
+        "short": "✅️(in combo with Gemini Code)",
+        "long": "Gemini CLI as a command line tool does not offer inline code completions, but can do so in combination with Gemini Code Assist API plugin."
+      },
+      "Chat": "✅",
+      "Smart Apply": {
+        "short": "✅(edits files)",
+        "long": "edits files and asks for user confirmation"
+      },
+      "Context Retrieval": {
+        "short": "✅(manual select, MCP, automatic)",
+        "long": "manual selection, Google Search, MCP and automatic discovery"
+      },
+      "Output Not Copyrighted Guarantee": "✖️",
+      "Supported IDEs": {
+        "short": "Terminal (VSCode and IntelliJ via plugin)",
+        "long": "Command Line Tool, but can be integrated in VSCode, IntelliJ, etc. via Gemini Code Assist IDE plugin."
+      },
+      "Underlying Model": "Gemini",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✅ (via GEMINI.md)",
+      "Pricing": {
+        "short": "free tier, pay-as-you-go",
+        "long": "Free tier for personal Google account (60 requests/minute, 1,000/day). Paid tiers for increased quota."
+      },
+      "Agent Mode": "✅",
+      "Controls Tools": {
+        "short": "terminal, web search, MCP",
+        "long": "runs shell commands, interacts with files, fetches web content, and can integrate MCP servers."
+      },
+      "Nice To Haves": {
+        "short": "open source, large context window, cross-file analysis, Windows",
+        "long": "Open source, large context window (1 million tokens), cross-file analysis, native Windows support"
+      },
+      "Watch Out": "Commandline only tool, unless paired with Gemini Code Assist IDE plugin"
+    },
+    {
       "Tool": "Github Copilot",
       "Homepage": "https://github.com/features/copilot",
       "Code Completion": "✅",
