@@ -20,6 +20,14 @@ function createShortLongFormatter(field) {
     };
 }
 
+// Helper: wrap value in a span for centering
+function centerCellFormatter(field) {
+    return function(cell) {
+        const value = getFieldValue(cell.getData(), field);
+        return `<span>${value !== undefined && value !== null ? value : ''}</span>`;
+    };
+}
+
 // --- Load tool page map ---
 let toolPageMap = {};
 fetch('/tools/tool_page_map.json')
@@ -86,63 +94,91 @@ function getTableColumns() {
             field: "Code Completion", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Code Completion")
+            formatter: function(cell) {
+                // Use the short/long formatter, but wrap in a span for centering
+                const html = createShortLongFormatter("Code Completion")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Chat\nSupport", 
             field: "Chat", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Chat")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Chat")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Smart\nApply", 
             field: "Smart Apply", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Smart Apply")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Smart Apply")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Context\nRetrieval", 
             field: "Context Retrieval", 
             width: 180, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Context Retrieval")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Context Retrieval")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Output Not\nCopyrighted", 
             field: "Output Not Copyrighted Guarantee", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Output Not Copyrighted Guarantee")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Output Not Copyrighted Guarantee")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Supported\nIDEs", 
             field: "Supported IDEs", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Supported IDEs")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Supported IDEs")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Underlying\nModel", 
             field: "Underlying Model", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Underlying Model")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Underlying Model")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "On Prem\nOption", 
             field: "On Prem Option", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("On Prem Option")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("On Prem Option")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Respects\nCode Flavor", 
             field: "Respects Code Flavor", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Respects Code Flavor")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Respects Code Flavor")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Pricing\nInfo", 
@@ -156,11 +192,11 @@ function getTableColumns() {
                 if (value && typeof value === 'object' && value.short !== undefined && value.long !== undefined) {
                     // Has both short and long versions
                     const displayValue = pricingLink ? `<a href="${pricingLink}" target="_blank">${value.short}</a>` : value.short;
-                    return `<div class="short-long-cell" data-long="${value.long.replace(/"/g, '&quot;')}" style="cursor: help;">${displayValue}</div>`;
+                    return `<span><div class="short-long-cell" data-long="${value.long.replace(/"/g, '&quot;')}" style="cursor: help;">${displayValue}</div></span>`;
                 } else {
                     // Only has direct value
                     const displayValue = getFieldValue(data, "Pricing");
-                    return pricingLink ? `<a href="${pricingLink}" target="_blank">${displayValue}</a>` : displayValue;
+                    return `<span>${pricingLink ? `<a href="${pricingLink}" target="_blank">${displayValue}</a>` : displayValue}</span>`;
                 }
             },
             variableHeight: true
@@ -170,28 +206,40 @@ function getTableColumns() {
             field: "Agent Mode", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Agent Mode")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Agent Mode")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Controls\nTools", 
             field: "Controls Tools", 
             width: 120, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Controls Tools")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Controls Tools")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Nice To\nHaves", 
             field: "Nice To Haves", 
             width: 180, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Nice To Haves")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Nice To Haves")(cell);
+                return `<span>${html}</span>`;
+            }
         },
         {
             title: "Watch\nOut", 
             field: "Watch Out", 
             width: 180, 
             variableHeight: true,
-            formatter: createShortLongFormatter("Watch Out")
+            formatter: function(cell) {
+                const html = createShortLongFormatter("Watch Out")(cell);
+                return `<span>${html}</span>`;
+            }
         },
     ];
 }

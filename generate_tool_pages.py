@@ -112,6 +112,10 @@ def generate_tool_page(tool_data, output_dir):
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aitoolcomparator.com/tools/{filename}" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/png" href="../code-assist.png" />
+  <link rel="apple-touch-icon" href="../code-assist.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../code-assist.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../code-assist.png" />
   <style>
     body {{
       font-family: Arial, sans-serif;
