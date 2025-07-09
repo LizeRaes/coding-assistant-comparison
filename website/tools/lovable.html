@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lovable - AI Coding Tool Comparison</title>
+  <meta name="description" content="Full feature details and comparison for Lovable, an AI coding assistant. Explore integrations, capabilities, pros, and cons." />
+  <meta name="keywords" content="Lovable, AI coding assistant, code completion, developer tools, IDE integration" />
+  <meta name="author" content="AI Coding Assistant Comparison" />
+  <meta property="og:title" content="Lovable - AI Coding Tool Comparison" />
+  <meta property="og:description" content="Full feature details and comparison for Lovable, an AI coding assistant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aitoolcomparator.com/tools/lovable.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/png" href="../code-assist.png" />
+  <link rel="apple-touch-icon" href="../code-assist.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../code-assist.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../code-assist.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f3f4f6;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0 0 20px 0;
+      font-size: 2.5em;
+      font-weight: 800;
+    }
+    
+    header p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+    
+    header a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    header a:hover {
+      text-decoration: underline;
+    }
+    
+    .tool-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin: 20px auto;
+      display: block;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    
+    .tool-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+    
+    section {
+      padding: 30px 40px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    h2 {
+      color: #1e40af;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 10px;
+    }
+    
+    h3 {
+      color: #374151;
+      font-size: 1.3em;
+      margin: 25px 0 15px 0;
+    }
+    
+    .pricing-open-source {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 0;
+      margin-bottom: 0;
+      /* No custom padding, let section handle it */
+    }
+    
+    .pricing, .open-source {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .pricing h3, .open-source h3 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    th {
+      background: #1e40af;
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+    
+    tr:hover {
+      background: #f3f4f6;
+    }
+    
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    
+    .pros, .cons {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid;
+    }
+    
+    .pros {
+      border-left-color: #10b981;
+    }
+    
+    .cons {
+      border-left-color: #ef4444;
+    }
+    
+    footer {
+      background: #374151;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .pros-cons, .pricing-open-source {
+        grid-template-columns: 1fr;
+      }
+      
+      .tool-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      header {
+        padding: 20px;
+      }
+      
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Lovable</h1>
+      <p><a href="https://lovable.dev/" target="_blank" rel="noopener">Official Website ↗</a></p>
+      <img src="https://lovable.dev/img/logo/lovable-logo-icon.png" alt="Lovable logo" class="tool-logo" />
+      <div class="tool-info">
+        
+        
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>No summary provided</p>
+    </section>
+
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <p>free tier, $25/month</p><p><a href="https://lovable.dev/pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>✖️</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Details</th>
+        </tr>
+      <tr>
+        <td>Supported IDEs</td>
+        <td>Web-based, no-code</td>
+      </tr>
+      <tr>
+        <td>On Prem Option</td>
+        <td>✖️</td>
+      </tr>
+      <tr>
+        <td>Respects Code Flavor</td>
+        <td>✖️</td>
+      </tr>
+      <tr>
+        <td>Agent Mode</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>Controls Tools</td>
+        <td>build, deploy, fix errors</td>
+      </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Pros & Cons</h2>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Nice To Haves</h3>
+          <p>no-code full-stack app generation</p>
+        </div>
+        <div class="cons">
+          <h3>Watch Out</h3>
+          <p>Not a coding assistant, only TypeScript</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p><a href="../index.html">← Back to tool comparison table</a></p>
+    </footer>
+  </div>
+</body>
+</html>

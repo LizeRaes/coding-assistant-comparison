@@ -1,6 +1,6 @@
 # AI Coding Assistant Comparison
 
-👉 **[Visit the filterable comparison table at aitoolcomparator.com](https://aitoolcomparator.com)** 
+👉 **Visit the filterable comparison table at [aitoolcomparator.com](https://aitoolcomparator.com)** 
 
 This repository contains the dataset powering a community-maintained comparison of AI coding assistants. The comparison table helps developers find the right tool by filtering features that matter to them.
 
@@ -13,7 +13,7 @@ With AI-powered coding assistants improving at a rapid pace, developers need an 
 
 ## 🚀 How to Use This Repo
 The latest sortable, filterable comparison table is hosted at:
-👉 [epic.engineering/coding-assistant-comparison](https://epic.engineering/coding-assistant-comparison)
+👉 [aitoolcomparator.com](https://aitoolcomparator.com/)
 
 This GitHub repository contains the raw dataset and is **open for contributions**! The website is **updated daily** to ensure the latest information is available.
 

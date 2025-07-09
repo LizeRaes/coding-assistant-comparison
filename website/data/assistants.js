@@ -2,6 +2,9 @@ const assistants = [
     {
       "Tool": "Claude Code",
       "Homepage": "https://www.anthropic.com/claude-code",
+      "Details Link": "tools/claude-code.html",
+      "Logo Url": "https://wpforms.com/wp-content/uploads/2024/08/claude-logo.png",
+      "Open Source": "✖️",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅ edits files️. Diff viewing with IDE-plugin",
@@ -20,6 +23,9 @@ const assistants = [
     {
       "Tool": "Cline.bot",
       "Homepage": "https://cline.bot/",
+      "Details Link": "tools/clinebot.html",
+      "Logo Url": "https://cline.bot/assets/icons/favicon-256x256.png",
+      "Open Source": "✅",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (diff preview)",
@@ -39,6 +45,9 @@ const assistants = [
       "Tool": "Cursor",
       "Homepage": "https://www.cursor.com/",
       "PricingLink": "https://www.cursor.com/pricing",
+      "Logo Url": "https://images.seeklogo.com/logo-png/61/1/cursor-logo-png_seeklogo-611587.png",
+      "Details Link": "tools/cursor.html",
+      "Open Source": "✖️",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅",
@@ -57,6 +66,9 @@ const assistants = [
     {
       "Tool": "DevoxxGenie",
       "Homepage": "https://github.com/devoxx/DevoxxGenieIDEAPlugin",
+      "Details Link": "tools/devoxxgenie.html",
+      "Logo Url": "https://pbs.twimg.com/profile_images/1845914428597825536/fcS2wTcQ_400x400.jpg",
+      "Open Source": "✅",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✖️",
@@ -73,8 +85,57 @@ const assistants = [
       "Watch Out": "no code completion"
     },
     {
+      "Tool": "Gemini CLI",
+      "Homepage": "https://github.com/google-gemini/gemini-cli",
+      "PricingLink": "https://github.com/google-gemini/gemini-cli/blob/main/docs/quota-and-pricing.md",
+      "Logo Url": "https://barnes.tech/Gemini%20CLI.png",
+      "Version": "0.1.9",
+      "Last Updated": "2025-07-09",
+      "Summary": "Gemini CLI is a command line tool that leverages Google's Gemini model to generate code, chat, and apply changes to files. Star features are a huge context window and MCP server integration. It can be used in combination with Gemini Code Assist plugin to be used in different IDEs and additionally provide code completion.",
+      "Details Link": "tools/gemini-cli.html",
+      "Open Source": "✅",
+      "Code Completion": {
+        "short": "✅️(in combo with Gemini Code)",
+        "long": "Gemini CLI as a command line tool does not offer inline code completions, but can do so in combination with Gemini Code Assist API plugin."
+      },
+      "Chat": "✅",
+      "Smart Apply": {
+        "short": "✅(edits files)",
+        "long": "edits files and asks for user confirmation"
+      },
+      "Context Retrieval": {
+        "short": "✅(manual select, MCP, automatic)",
+        "long": "manual selection, Google Search, MCP and automatic discovery"
+      },
+      "Output Not Copyrighted Guarantee": "✖️",
+      "Supported IDEs": {
+        "short": "Terminal (VSCode and IntelliJ via plugin)",
+        "long": "Command Line Tool, but can be integrated in VSCode, IntelliJ, etc. via Gemini Code Assist IDE plugin."
+      },
+      "Underlying Model": "Gemini",
+      "On Prem Option": "✖️",
+      "Respects Code Flavor": "✅ (via GEMINI.md)",
+      "Pricing": {
+        "short": "free tier, pay-as-you-go",
+        "long": "Free tier for personal Google account (60 requests/minute, 1,000/day). Paid tiers for increased quota."
+      },
+      "Agent Mode": "✅",
+      "Controls Tools": {
+        "short": "terminal, web search, MCP",
+        "long": "runs shell commands, interacts with files, fetches web content, and can integrate MCP servers."
+      },
+      "Nice To Haves": {
+        "short": "open source, large context window, cross-file analysis, Windows",
+        "long": "Open source, large context window (1 million tokens), cross-file analysis, native Windows support"
+      },
+      "Watch Out": "Commandline only tool, unless paired with Gemini Code Assist IDE plugin"
+    },
+    {
       "Tool": "Github Copilot",
       "Homepage": "https://github.com/features/copilot",
+      "Details Link": "tools/github-copilot.html",
+      "Logo Url": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-copilot-icon.png",
+      "Open Source": "✖️",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✖️",
@@ -93,6 +154,9 @@ const assistants = [
     {
       "Tool": "JetBrains AI Assistant",
       "Homepage": "https://www.jetbrains.com/ai/",
+      "Details Link": "tools/jetbrains-ai-assistant.html",
+      "Logo Url": "https://plugins.jetbrains.com/files/22282/790037/icon/default.png",
+      "Open Source": "✖️",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (error prone)",
@@ -112,6 +176,9 @@ const assistants = [
       "Tool": "Jules",
       "Homepage": "https://jules.google/",
       "PricingLink": "",
+      "Logo Url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvAXEz4EsU3RQHCV96BAfJusei09ZBjQOG2g&s",
+      "Details Link": "tools/jules.html",
+      "Open Source": "✖️",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅(edits files)",
@@ -131,6 +198,9 @@ const assistants = [
       "Tool": "Junie",
       "Homepage": "https://www.jetbrains.com/junie/",
       "PricingLink": "https://www.jetbrains.com/junie/#pricing",
+      "Logo Url": "https://plugins.jetbrains.com/files/26104/789538/icon/default.svg",
+      "Details Link": "tools/junie.html",
+      "Open Source": "✖️",
       "Code Completion": "✖️",
       "Chat": "✅",
       "Smart Apply": "✅ (diff viewer)",
@@ -147,9 +217,12 @@ const assistants = [
       "Watch Out": ""
     },    
     {
-      "Tool": "Qodo (formerly Codium)",
+      "Tool": "Qodo",
       "Homepage": "https://www.qodo.ai/",
       "PricingLink": "https://www.qodo.ai/pricing/",
+      "Logo Url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Qodo_logo_2025.png/250px-Qodo_logo_2025.png",
+      "Details Link": "tools/qodo.html",
+      "Open Source": "✅",
       "Code Completion": "✅ (and fast)",
       "Chat": "✅",
       "Smart Apply": "changes in new file (show diff)",
@@ -169,6 +242,9 @@ const assistants = [
       "Tool": "Windsurf",
       "Homepage": "https://codeium.com/windsurf",
       "PricingLink": "https://codeium.com/pricing",
+      "Logo Url": "https://exafunction.github.io/public/brand/windsurf-black-symbol.png",
+      "Details Link": "tools/windsurf.html",
+      "Open Source": "✖️",
       "Code Completion": "✅",
       "Chat": "✅",
       "Smart Apply": "✅ (edits files)",
@@ -188,6 +264,9 @@ const assistants = [
       "Tool": "Base44",
       "Homepage": "https://base44.com/",
       "PricingLink": "https://base44.com/pricing",
+      "Logo Url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/05de4f_logo_V6.png",
+      "Details Link": "tools/base44.html",
+      "Open Source": "✖️",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -207,6 +286,9 @@ const assistants = [
       "Tool": "Devin",
       "Homepage": "https://devin.ai/",
       "PricingLink": "https://devin.ai/pricing",
+      "Logo Url": "https://almbok.com/_media/ai/tools/devin.png",
+      "Details Link": "tools/devin.html",
+      "Open Source": "✖️",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -226,6 +308,9 @@ const assistants = [
       "Tool": "Lovable",
       "Homepage": "https://lovable.dev/",
       "PricingLink": "https://lovable.dev/pricing",
+      "Logo Url": "https://lovable.dev/img/logo/lovable-logo-icon.png",
+      "Details Link": "tools/lovable.html",
+      "Open Source": "✖️",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -244,6 +329,9 @@ const assistants = [
     {
       "Tool": "Moddy",
       "Homepage": "https://www.moderne.io/",
+      "Details Link": "tools/moddy.html",
+      "Logo Url": "https://logosandtypes.com/wp-content/uploads/2025/02/Moderne.png",
+      "Open Source": "✅",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
@@ -262,6 +350,9 @@ const assistants = [
     {
       "Tool": "Replit",
       "Homepage": "https://replit.com/",
+      "Logo Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/2048px-New_Replit_Logo.svg.png",
+      "Details Link": "tools/replit.html",
+      "Open Source": "✖️",
       "Code Completion": "",
       "Chat": "",
       "Smart Apply": "",
