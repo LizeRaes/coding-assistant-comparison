@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let table;
     let filterGroups = [];
 
+    // Helper function to extract the appropriate value from a data field
+    // If the field has a 'short' property, use that; otherwise use the direct value
+    function getFieldValue(data, field) {
+        const value = data[field];
+        if (value && typeof value === 'object' && value.short !== undefined) {
+            return value.short;
+        }
+        return value;
+    }
+
     // Add scroll hint text above table
     const tableElement = document.querySelector("#table");
     const scrollHint = document.createElement("div");
@@ -30,30 +40,134 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 variableHeight: true
             },
-            {title: "Code\nCompletion", field: "Code Completion", width: 120, variableHeight: true},
-            {title: "Chat\nSupport", field: "Chat", width: 120, variableHeight: true},
-            {title: "Smart\nApply", field: "Smart Apply", width: 120, variableHeight: true},
-            {title: "Context\nRetrieval", field: "Context Retrieval", width: 180, variableHeight: true},
-            {title: "Output Not\nCopyrighted", field: "Output Not Copyrighted Guarantee", width: 120, variableHeight: true},
-            {title: "Supported\nIDEs", field: "Supported IDEs", width: 120, variableHeight: true},
-            {title: "Underlying\nModel", field: "Underlying Model", width: 120, variableHeight: true},
-            {title: "On Prem\nOption", field: "On Prem Option", width: 120, variableHeight: true},
-            {title: "Respects\nCode Flavor", field: "Respects Code Flavor", width: 120, variableHeight: true},
+            {
+                title: "Code\nCompletion", 
+                field: "Code Completion", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Code Completion");
+                }
+            },
+            {
+                title: "Chat\nSupport", 
+                field: "Chat", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Chat");
+                }
+            },
+            {
+                title: "Smart\nApply", 
+                field: "Smart Apply", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Smart Apply");
+                }
+            },
+            {
+                title: "Context\nRetrieval", 
+                field: "Context Retrieval", 
+                width: 180, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Context Retrieval");
+                }
+            },
+            {
+                title: "Output Not\nCopyrighted", 
+                field: "Output Not Copyrighted Guarantee", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Output Not Copyrighted Guarantee");
+                }
+            },
+            {
+                title: "Supported\nIDEs", 
+                field: "Supported IDEs", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Supported IDEs");
+                }
+            },
+            {
+                title: "Underlying\nModel", 
+                field: "Underlying Model", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Underlying Model");
+                }
+            },
+            {
+                title: "On Prem\nOption", 
+                field: "On Prem Option", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "On Prem Option");
+                }
+            },
+            {
+                title: "Respects\nCode Flavor", 
+                field: "Respects Code Flavor", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Respects Code Flavor");
+                }
+            },
             {
                 title: "Pricing\nInfo", 
                 field: "Pricing", 
                 width: 120, 
                 formatter: function(cell) {
-                    const value = cell.getValue();
+                    const value = getFieldValue(cell.getData(), "Pricing");
                     const pricingLink = cell.getData().PricingLink;
                     return pricingLink ? `<a href="${pricingLink}" target="_blank">${value}</a>` : value;
                 },
                 variableHeight: true
             },
-            {title: "Agent\nMode", field: "Agent Mode", width: 120, variableHeight: true},
-            {title: "Controls\nTools", field: "Controls Tools", width: 120, variableHeight: true},
-            {title: "Nice To\nHaves", field: "Nice To Haves", width: 180, variableHeight: true},
-            {title: "Watch\nOut", field: "Watch Out", width: 180, variableHeight: true},
+            {
+                title: "Agent\nMode", 
+                field: "Agent Mode", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Agent Mode");
+                }
+            },
+            {
+                title: "Controls\nTools", 
+                field: "Controls Tools", 
+                width: 120, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Controls Tools");
+                }
+            },
+            {
+                title: "Nice To\nHaves", 
+                field: "Nice To Haves", 
+                width: 180, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Nice To Haves");
+                }
+            },
+            {
+                title: "Watch\nOut", 
+                field: "Watch Out", 
+                width: 180, 
+                variableHeight: true,
+                formatter: function(cell) {
+                    return getFieldValue(cell.getData(), "Watch Out");
+                }
+            },
         ],
         height: "100%",
         rowFormatter: function(row) {
@@ -92,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return filterGroups.every(group => {
                     // Map each filter in the group to its result
                     const results = group.filters.map(filter => {
-                        const value = data[filter.field];
+                        const value = getFieldValue(data, filter.field);
                         switch (filter.type) {
                             case "=": return value === filter.value;
                             case "!=": return value !== filter.value;
@@ -410,14 +524,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 table.setFilter((data) => {
                     // All toggles must match (contains-check)
                     for (const col of quickFilterColumns) {
-                        if (toggleState[col.field] && (!data[col.field] || !data[col.field].includes("✅"))) return false;
+                        if (toggleState[col.field] && (!getFieldValue(data, col.field) || !getFieldValue(data, col.field).includes("✅"))) return false;
                     }
                     // Text search: match any field
                     if (textSearchValue.length > 0) {
                         const search = textSearchValue.toLowerCase();
                         let found = false;
                         for (const key in data) {
-                            if (data[key] && data[key].toString().toLowerCase().includes(search)) {
+                            const fieldValue = getFieldValue(data, key);
+                            if (fieldValue && fieldValue.toString().toLowerCase().includes(search)) {
                                 found = true;
                                 break;
                             }
@@ -475,7 +590,7 @@ document.addEventListener("DOMContentLoaded", function () {
             advancedMatch = false;
             for (const group of filterGroups) {
                 const results = group.filters.map(filter => {
-                    const value = data[filter.field];
+                    const value = getFieldValue(data, filter.field);
                     switch (filter.type) {
                         case "=": return value === filter.value;
                         case "!=": return value !== filter.value;
@@ -498,14 +613,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const { toggleState, textSearchValue, quickFilterColumns } = window.quickFilterBarState;
         // All toggles must match (contains-check)
         for (const col of quickFilterColumns) {
-            if (toggleState[col.field] && (!data[col.field] || !data[col.field].includes("✅"))) return false;
+            if (toggleState[col.field] && (!getFieldValue(data, col.field) || !getFieldValue(data, col.field).includes("✅"))) return false;
         }
         // Text search: match any field
         if (textSearchValue.length > 0) {
             const search = textSearchValue.toLowerCase();
             let found = false;
             for (const key in data) {
-                if (data[key] && data[key].toString().toLowerCase().includes(search)) {
+                const fieldValue = getFieldValue(data, key);
+                if (fieldValue && fieldValue.toString().toLowerCase().includes(search)) {
                     found = true;
                     break;
                 }
