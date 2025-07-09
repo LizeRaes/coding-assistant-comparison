@@ -13,7 +13,7 @@ With AI-powered coding assistants improving at a rapid pace, developers need an 
 
 ## 🚀 How to Use This Repo
 The latest sortable, filterable comparison table is hosted at:
-👉 [epic.engineering/coding-assistant-comparison](https://epic.engineering/coding-assistant-comparison)
+👉 [aitoolcomparator.com](https://aitoolcomparator.com/)
 
 This GitHub repository contains the raw dataset and is **open for contributions**! The website is **updated daily** to ensure the latest information is available.
 
