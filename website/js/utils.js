@@ -33,6 +33,7 @@ function createScrollHint(tableElement) {
 function getAvailableFields() {
     return [
         "Tool",
+        "Logo Url",
         "Pricing",
         "Code Completion",
         "Chat",

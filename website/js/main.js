@@ -109,6 +109,128 @@ function initializeAdvancedFilters() {
 }
 
 /**
+ * Initialize tooltip functionality for short/long cells
+ */
+function initializeTooltips() {
+    let tooltip = null;
+    let currentCell = null;
+
+    // Create tooltip element
+    function createTooltip() {
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.id = 'hover-tooltip';
+            tooltip.style.cssText = `
+                position: fixed;
+                background: #1e40af;
+                color: white;
+                padding: 16px;
+                border-radius: 8px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+                z-index: 9999;
+                white-space: pre-wrap;
+                max-width: 400px;
+                word-wrap: break-word;
+                font-size: 14px;
+                line-height: 1.5;
+                pointer-events: none;
+                border: 2px solid #2563eb;
+                display: none;
+            `;
+            document.body.appendChild(tooltip);
+        }
+    }
+
+    // Show tooltip
+    function showTooltip(event, cell) {
+        createTooltip();
+        const longText = cell.getAttribute('data-long');
+        if (longText) {
+            tooltip.textContent = longText;
+            tooltip.style.display = 'block';
+            
+            // Position tooltip near mouse cursor
+            const x = event.clientX + 15;
+            const y = event.clientY - 15;
+            
+            // Adjust position to keep tooltip in viewport
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            let finalX = x;
+            let finalY = y;
+            
+            // Adjust horizontal position if tooltip would go off-screen
+            if (x + tooltipRect.width > viewportWidth) {
+                finalX = x - tooltipRect.width - 30;
+            }
+            
+            // Adjust vertical position if tooltip would go off-screen
+            if (y - tooltipRect.height < 0) {
+                finalY = y + 30;
+            }
+            
+            tooltip.style.left = finalX + 'px';
+            tooltip.style.top = finalY + 'px';
+        }
+    }
+
+    // Hide tooltip
+    function hideTooltip() {
+        if (tooltip) {
+            tooltip.style.display = 'none';
+        }
+    }
+
+    // Add event listeners to table
+    document.addEventListener('mouseover', function(event) {
+        const cell = event.target.closest('.short-long-cell');
+        if (cell && cell !== currentCell) {
+            currentCell = cell;
+            showTooltip(event, cell);
+        }
+    });
+
+    document.addEventListener('mousemove', function(event) {
+        if (tooltip && tooltip.style.display === 'block') {
+            const cell = event.target.closest('.short-long-cell');
+            if (cell && cell === currentCell) {
+                // Update tooltip position as mouse moves
+                const x = event.clientX + 15;
+                const y = event.clientY - 15;
+                
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                
+                let finalX = x;
+                let finalY = y;
+                
+                if (x + tooltipRect.width > viewportWidth) {
+                    finalX = x - tooltipRect.width - 30;
+                }
+                
+                if (y - tooltipRect.height < 0) {
+                    finalY = y + 30;
+                }
+                
+                tooltip.style.left = finalX + 'px';
+                tooltip.style.top = finalY + 'px';
+            }
+        }
+    });
+
+    document.addEventListener('mouseout', function(event) {
+        const cell = event.target.closest('.short-long-cell');
+        if (cell && cell === currentCell) {
+            currentCell = null;
+            hideTooltip();
+        }
+    });
+}
+
+/**
  * Initialize the application
  */
 function initializeApp() {
@@ -126,6 +248,9 @@ function initializeApp() {
     
     // Initialize advanced filters
     initializeAdvancedFilters();
+    
+    // Initialize tooltips
+    initializeTooltips();
     
     console.log('Application initialized successfully');
 }
