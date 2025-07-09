@@ -199,6 +199,9 @@ const assistants = [
       "Homepage": "https://www.jetbrains.com/junie/",
       "PricingLink": "https://www.jetbrains.com/junie/#pricing",
       "Logo Url": "https://plugins.jetbrains.com/files/26104/789538/icon/default.svg",
+      "Version": "251.167.97",
+      "Last Updated": "2025-07-09",
+      "Summary": "Junie is JetBrains's coding agent, integrated into all JetBrains IDEs and Android Studio. With enterprise use cases in mind, it will diligently run all tests to guarantee quality of the proposed code.Code flavor can be customized via guidelinees.md.",
       "Details Link": "tools/junie.html",
       "Open Source": "✖️",
       "Code Completion": "✖️",
@@ -208,7 +211,7 @@ const assistants = [
       "Output Not Copyrighted Guarantee": "✖️",
       "Supported IDEs": {
         "short": "all JetBrains IDEs",
-        "long": "IntelliJ IDEA, PyCharm, WebStorm, GoLand, PhpStorm, RubyMine, RustRover, Android Studio",
+        "long": "IntelliJ IDEA, PyCharm, WebStorm, GoLand, PhpStorm, RubyMine, RustRover, Android Studio"
       },
       "Underlying Model": "Claude 3.7/4.0",
       "On Prem Option": "✖️",
