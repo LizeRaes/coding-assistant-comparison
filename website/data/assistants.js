@@ -88,7 +88,7 @@ const assistants = [
       "Tool": "Gemini CLI",
       "Homepage": "https://github.com/google-gemini/gemini-cli",
       "PricingLink": "https://github.com/google-gemini/gemini-cli/blob/main/docs/quota-and-pricing.md",
-      "Logo Url": "https://barnes.tech/Gemini%20CLI.png",
+      "Logo Url": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/192px.svg",
       "Version": "0.1.9",
       "Last Updated": "2025-07-09",
       "Summary": "Gemini CLI is a command line tool that leverages Google's Gemini model to generate code, chat, and apply changes to files. Star features are a huge context window and MCP server integration. It can be used in combination with Gemini Code Assist plugin to be used in different IDEs and additionally provide code completion.",
