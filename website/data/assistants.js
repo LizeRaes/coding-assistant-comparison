@@ -2,7 +2,7 @@ const assistants = [
       {
       "Tool": "Amazon Q Developer",
       "Homepage": "https://aws.amazon.com/q/developer/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el",
-      "Details Link": "tools/amazon-q-dev.html",
+      "Details Link": "tools/amazon-q-developer.html",
       "Logo Url": "https://d1.awsstatic.com/getting-started-guides/learning/amazon-q/icon_amazon-q.a5c38564734b6e9f611e9599eb271142389313a4.png",
       "Open Source": "✖️",
       "Code Completion": "✅",
@@ -23,7 +23,7 @@ const assistants = [
     {
       "Tool": "Amazon Q Developer CLI",
       "Homepage": "https://aws.amazon.com/q/developer/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el",
-      "Details Link": "tools/amazon-q-cli.html",
+      "Details Link": "tools/amazon-q-developer-cli.html",
       "Logo Url": "https://d1.awsstatic.com/getting-started-guides/learning/amazon-q/icon_amazon-q.a5c38564734b6e9f611e9599eb271142389313a4.png",
       "Open Source": "✅",
       "Code Completion": "✅",
