@@ -62,7 +62,7 @@ def generate_tool_page(tool_data, output_dir):
     
     # Get pricing and open source info
     pricing_data = tool_data.get('Pricing', '')
-    open_source = tool_data.get('Open Source', '')
+    open_source_data = tool_data.get('Open Source', '')
     
     # Format pricing text
     if isinstance(pricing_data, dict):
@@ -72,6 +72,12 @@ def generate_tool_page(tool_data, output_dir):
     pricing_html = f"<p>{pricing_text if pricing_text else 'Pricing information not available'}</p>"
     if pricing_link:
         pricing_html += f'<p><a href="{pricing_link}" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>'
+    
+    # Format open source text
+    if isinstance(open_source_data, dict):
+        open_source_text = open_source_data.get('long') or open_source_data.get('short') or ''
+    else:
+        open_source_text = open_source_data
     
     # Define fields to include in features table
     feature_fields = [
@@ -364,7 +370,7 @@ def generate_tool_page(tool_data, output_dir):
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>{open_source if open_source else 'Open source information not available'}</p>
+          <p>{open_source_text if open_source_text else 'Open source information not available'}</p>
         </div>
       </div>
     </section>
