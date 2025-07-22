@@ -7,8 +7,12 @@ const assistants = [
       "Open Source": "✖️",
       "Code Completion": "✅",
       "Chat": "✅",
-      "Smart Apply": "✅ edits files️. Diff viewing with IDE-plugin",
-      "Context Retrieval": "Select with IDE-plugin, MCP",
+      "Smart Apply": 
+      {
+        "short": "✅️ (diff preview)",
+        "long": "✅ edits files️, diff viewing with IDE-plugin"
+      },
+      "Context Retrieval": "select with IDE-plugin, MCP",
       "Output Not Copyrighted Guarantee": "✅",
       "Supported IDEs": "VSCode, IntelliJ and Eclipse",
       "Underlying Model": "Claude",
@@ -28,7 +32,7 @@ const assistants = [
       "Open Source": "✅",
       "Code Completion": "✅",
       "Chat": "✅",
-      "Smart Apply": "✅ View diffs, review changes and accept or reject them",
+      "Smart Apply": "✅ (view diffs, review changes and accept or reject them)",
       "Context Retrieval": "Configurable context files, MCP",
       "Output Not Copyrighted Guarantee": "✅",
       "Supported IDEs": "Terminal - zsh, bash, fish",
@@ -260,7 +264,7 @@ const assistants = [
       "Respects Code Flavor": "✅ guidelines.md",
       "Pricing": {
         "short": "free tier, then from 100€/year",
-        "long": "free tier, AI Pro (100€/year), AI Ultimate (200€/year)",
+        "long": "free tier, AI Pro (100€/year), AI Ultimate (200€/year)"
       },
       "Agent Mode": "✅",
       "Controls Tools": "terminal, tests, compiler",

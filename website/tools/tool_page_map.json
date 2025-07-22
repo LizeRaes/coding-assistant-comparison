@@ -1,4 +1,6 @@
 {
+  "Amazon Q Developer": "tools/amazon-q-developer.html",
+  "Amazon Q Developer CLI": "tools/amazon-q-developer-cli.html",
   "Claude Code": "tools/claude-code.html",
   "Cline.bot": "tools/clinebot.html",
   "Cursor": "tools/cursor.html",
@@ -8,6 +10,7 @@
   "JetBrains AI Assistant": "tools/jetbrains-ai-assistant.html",
   "Jules": "tools/jules.html",
   "Junie": "tools/junie.html",
+  "Kiro": "tools/kiro.html",
   "Qodo": "tools/qodo.html",
   "Windsurf": "tools/windsurf.html",
   "Base44": "tools/base44.html",
