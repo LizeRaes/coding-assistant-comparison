@@ -1,4 +1,4 @@
-[
+const low_code_assistants = [
   {
     "Tool": "Base44",
     "tool_type": "low_code",

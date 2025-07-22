@@ -102,22 +102,54 @@
         <h1 class="text-3xl font-bold mb-4">AI Coding Assistant Comparison</h1>
 
         <div class="table-description">
-            <p>This is a community-updated table to help you reduce the search space for your coding tool. You can filter on features that are important to you. Note: This comparison table is currently optimized for desktop viewing. Mobile and tablet support are under development.</p>
+            <p>This is a community-updated table to help you reduce the search space for your coding tool. Note: This comparison table is currently optimized for desktop viewing. Mobile and tablet support are under development.</p>
             <p>Found an error? Please <a href="https://github.com/LizeRaes/coding-assistant-comparison/issues/new?labels=mistake&template=report-mistake.md&title=Mistake%3A+" target="_blank">report it here</a> or even better, <a href="https://github.com/LizeRaes/coding-assistant-comparison/pulls" target="_blank">update the table with a PR on GitHub</a>.</p>
         </div>
-        
-        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-            <div id="quick-filters-bar" class="mb-4"></div>
-            <div id="advanced-filters-toggle" class="mb-2"></div>
-            <button id="clearFilters" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 hidden">Clear Filters</button>
-            <div id="filters" class="mb-4"></div>
-            <!--<div class="flex">
-                <button id="addFilter" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">+ Add Filter Criterium</button>
-            </div>-->
+
+        <!-- Jump to Navigation -->
+        <div class="mb-6">
+            <span class="text-lg font-semibold">Jump to:</span>
+            <a href="#coding-assistants" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors inline-flex items-center ml-3">
+                Coding Assistants
+                <span style='font-size: 1.1em; margin-left: 4px;'>↗</span>
+            </a>
+            <a href="#cli-tools" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors inline-flex items-center ml-3">
+                CLI Tools
+                <span style='font-size: 1.1em; margin-left: 4px;'>↗</span>
+            </a>
+            <a href="#low-code-tools" class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors inline-flex items-center ml-3">
+                Low Code / No Code Tools
+                <span style='font-size: 1.1em; margin-left: 4px;'>↗</span>
+            </a>
+            <a href="#specialized-tools" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors inline-flex items-center ml-3">
+                Specialized Tools
+                <span style='font-size: 1.1em; margin-left: 4px;'>↗</span>
+            </a>
         </div>
 
-        <!-- Table -->
-        <div id="table"></div>
+        <!-- Coding Assistants Table -->
+        <div class="mb-8">
+            <h2 id="coding-assistants" class="text-2xl font-bold mb-4 text-blue-600">Coding Assistants</h2>
+            <div id="coding-assistants-table"></div>
+        </div>
+
+        <!-- CLI Tools Table -->
+        <div class="mb-8">
+            <h2 id="cli-tools" class="text-2xl font-bold mb-4 text-green-600">CLI Tools</h2>
+            <div id="cli-tools-table"></div>
+        </div>
+
+        <!-- Low Code / No Code Tools Table -->
+        <div class="mb-8">
+            <h2 id="low-code-tools" class="text-2xl font-bold mb-4 text-purple-600">Low Code / No Code Tools</h2>
+            <div id="low-code-tools-table"></div>
+        </div>
+
+        <!-- Specialized Tools Table -->
+        <div class="mb-8">
+            <h2 id="specialized-tools" class="text-2xl font-bold mb-4 text-orange-600">Specialized Tools</h2>
+            <div id="specialized-tools-table"></div>
+        </div>
 
         <div class="legal-disclaimer">
             <p><strong>Important Legal Notice:</strong></p>
@@ -128,11 +160,12 @@
         </div>
     </div>
 
-    <script src="data/assistants.js"></script>
+    <script src="data/coding_assistants.js"></script>
+    <script src="data/cli_assistants.js"></script>
+    <script src="data/low_code_assistants.js"></script>
+    <script src="data/specialized_assistants.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/table-config.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/quick-filters.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -36,10 +36,12 @@ fetch('/tools/tool_page_map.json')
 
 /**
  * Get the table column configuration
+ * @param {Object} options - Options for column configuration
+ * @param {Array} options.hideColumns - Array of column field names to hide
  * @returns {Array} Array of column definitions for Tabulator
  */
-function getTableColumns() {
-    return [
+function getTableColumns(options = {}) {
+    const allColumns = [
         {
             title: "Logo", 
             field: "Logo Url", 
@@ -242,17 +244,26 @@ function getTableColumns() {
             }
         },
     ];
+
+    // Filter out hidden columns
+    if (options.hideColumns && options.hideColumns.length > 0) {
+        return allColumns.filter(column => !options.hideColumns.includes(column.field));
+    }
+
+    return allColumns;
 }
 
 /**
  * Get the table configuration object
+ * @param {Array} data - The data array for the table
+ * @param {Object} options - Options for table configuration
  * @returns {Object} Tabulator configuration object
  */
-function getTableConfig() {
+function getTableConfig(data = assistants, options = {}) {
     return {
-        data: assistants,
+        data: data,
         layout: "fitColumns",
-        columns: getTableColumns(),
+        columns: getTableColumns(options),
         height: "100%",
         rowFormatter: function(row) {
             const index = row.getPosition() + 1;

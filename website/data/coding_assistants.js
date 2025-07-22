@@ -1,4 +1,4 @@
-[
+const coding_assistants = [
   {
     "Tool": "Amazon Q Developer",
     "tool_type": "coding_assistant",

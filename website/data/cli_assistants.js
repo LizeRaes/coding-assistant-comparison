@@ -1,4 +1,4 @@
-[
+const cli_assistants = [
   {
     "Tool": "Amazon Q Developer CLI",
     "tool_type": "cli_tool",

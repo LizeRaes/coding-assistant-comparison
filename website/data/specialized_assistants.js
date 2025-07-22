@@ -1,4 +1,4 @@
-[
+const specialized_assistants = [
   {
     "Tool": "Moddy",
     "tool_type": "specialized",

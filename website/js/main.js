@@ -1,6 +1,9 @@
 // Main application module for the AI Coding Assistant Comparison tool
 
-let table;
+let codingAssistantsTable;
+let cliToolsTable;
+let lowCodeToolsTable;
+let specializedToolsTable;
 
 /**
  * Combined filter function that merges quick filters and advanced filters
@@ -43,9 +46,15 @@ function combinedFilter(data) {
  */
 function updateAllFilters() {
     if (getFilterGroups().length === 0) {
-        table.clearFilter();
+        codingAssistantsTable.clearFilter();
+        cliToolsTable.clearFilter();
+        lowCodeToolsTable.clearFilter();
+        specializedToolsTable.clearFilter();
     } else {
-        table.setFilter(combinedFilter);
+        codingAssistantsTable.setFilter(combinedFilter);
+        cliToolsTable.setFilter(combinedFilter);
+        lowCodeToolsTable.setFilter(combinedFilter);
+        specializedToolsTable.setFilter(combinedFilter);
     }
 }
 
@@ -54,7 +63,10 @@ function updateAllFilters() {
  */
 function clearAllFilters() {
     // Clear quick filters
-    clearQuickFilters(table, updateAllFilters);
+    clearQuickFilters(codingAssistantsTable, updateAllFilters);
+    clearQuickFilters(cliToolsTable, updateAllFilters);
+    clearQuickFilters(lowCodeToolsTable, updateAllFilters);
+    clearQuickFilters(specializedToolsTable, updateAllFilters);
     
     // Clear advanced filters
     clearAdvancedFilters();
@@ -70,7 +82,7 @@ function initializeAdvancedFilters() {
     const addFilterBtn = document.getElementById("addFilter");
     if (addFilterBtn) {
         addFilterBtn.addEventListener("click", function () {
-            const { filterContainer, filter } = createFilterCriterion(table, updateAllFilters);
+            const { filterContainer, filter } = createFilterCriterion(codingAssistantsTable, updateAllFilters);
             
             const filtersContainer = document.getElementById("filters");
             
@@ -236,15 +248,36 @@ function initializeTooltips() {
 function initializeApp() {
     console.log('Starting table initialization...');
     
-    // Create scroll hint
-    const tableElement = document.querySelector("#table");
-    createScrollHint(tableElement);
+    // Create scroll hints for all tables
+    const codingTableElement = document.querySelector("#coding-assistants-table");
+    const cliTableElement = document.querySelector("#cli-tools-table");
+    const lowCodeTableElement = document.querySelector("#low-code-tools-table");
+    const specializedTableElement = document.querySelector("#specialized-tools-table");
     
-    // Initialize table
-    table = new Tabulator("#table", getTableConfig());
+    createScrollHint(codingTableElement);
+    createScrollHint(cliTableElement);
+    createScrollHint(lowCodeTableElement);
+    createScrollHint(specializedTableElement);
     
-    // Initialize quick filters
-    initializeQuickFilters(table, updateAllFilters);
+    // Initialize Coding Assistants table
+    codingAssistantsTable = new Tabulator("#coding-assistants-table", getTableConfig(coding_assistants));
+    
+    // Initialize CLI Tools table
+    cliToolsTable = new Tabulator("#cli-tools-table", getTableConfig(cli_assistants));
+    
+    // Initialize Low Code Tools table
+    lowCodeToolsTable = new Tabulator("#low-code-tools-table", getTableConfig(low_code_assistants, {
+        hideColumns: ["Code Completion", "Chat", "Smart Apply", "Context Retrieval", "Output Not Copyrighted Guarantee"]
+    }));
+    
+    // Initialize Specialized Tools table
+    specializedToolsTable = new Tabulator("#specialized-tools-table", getTableConfig(specialized_assistants));
+    
+    // Initialize quick filters for all tables
+    initializeQuickFilters(codingAssistantsTable, updateAllFilters);
+    initializeQuickFilters(cliToolsTable, updateAllFilters);
+    initializeQuickFilters(lowCodeToolsTable, updateAllFilters);
+    initializeQuickFilters(specializedToolsTable, updateAllFilters);
     
     // Initialize advanced filters
     initializeAdvancedFilters();
