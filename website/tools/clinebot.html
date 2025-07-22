@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>Cline.bot</h1>
+      <div class="category-badge">Coding Assistant</div>
       <p><a href="https://cline.bot/" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://cline.bot/assets/icons/favicon-256x256.png" alt="Cline.bot logo" class="tool-logo" />
       <div class="tool-info">
@@ -239,7 +251,7 @@
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✅</p>
+          <p>{'short': '✅', 'long': '✅'}</p>
         </div>
       </div>
     </section>
@@ -303,7 +315,7 @@
       <div class="pros-cons">
         <div class="pros">
           <h3>Nice To Haves</h3>
-          <p>open source,local LLM or own API keys support for privacy</p>
+          <p>open source, local LLM or own API keys support for privacy</p>
         </div>
         <div class="cons">
           <h3>Watch Out</h3>

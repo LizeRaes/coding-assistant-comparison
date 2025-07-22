@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>JetBrains AI Assistant</h1>
+      <div class="category-badge">Coding Assistant</div>
       <p><a href="https://www.jetbrains.com/ai/" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://plugins.jetbrains.com/files/22282/790037/icon/default.png" alt="JetBrains AI Assistant logo" class="tool-logo" />
       <div class="tool-info">
@@ -235,11 +247,11 @@
       <div class="pricing-open-source">
         <div class="pricing">
           <h3>Pricing</h3>
-          <p>Unlimited code completion and local models support. Commercial plans start at 100$/yr</p>
+          <p>Unlimited code completion and local models support. Commercial plans start at $100/yr</p>
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✖️</p>
+          <p>{'short': '✖️', 'long': '✖️'}</p>
         </div>
       </div>
     </section>
@@ -281,7 +293,7 @@
       </tr>
       <tr>
         <td>On Prem Option</td>
-        <td>Full line completion; local models available via Ollama and LM Studio</td>
+        <td>full line completion; local models available via Ollama and LM Studio</td>
       </tr>
       <tr>
         <td>Respects Code Flavor</td>
@@ -293,7 +305,7 @@
       </tr>
       <tr>
         <td>Controls Tools</td>
-        <td>Pluggable MCP servers</td>
+        <td>pluggable MCP servers</td>
       </tr>
       </table>
     </section>

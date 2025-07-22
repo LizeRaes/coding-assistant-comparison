@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>Base44</h1>
+      <div class="category-badge">Low Code / No Code Tool</div>
       <p><a href="https://base44.com/" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/05de4f_logo_V6.png" alt="Base44 logo" class="tool-logo" />
       <div class="tool-info">
@@ -239,7 +251,7 @@
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✖️</p>
+          <p>{'short': '✖️', 'long': '✖️'}</p>
         </div>
       </div>
     </section>
@@ -253,7 +265,7 @@
         </tr>
       <tr>
         <td>Supported IDEs</td>
-        <td>Web-based, no-code</td>
+        <td>web-based, no-code</td>
       </tr>
       <tr>
         <td>On Prem Option</td>
@@ -283,7 +295,7 @@
         </div>
         <div class="cons">
           <h3>Watch Out</h3>
-          <p>Not a coding assistant, fixed tech stack</p>
+          <p>not a coding assistant, fixed tech stack</p>
         </div>
       </div>
     </section>

@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>Replit</h1>
+      <div class="category-badge">Low Code / No Code Tool</div>
       <p><a href="https://replit.com/" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_Replit_Logo.svg/2048px-New_Replit_Logo.svg.png" alt="Replit logo" class="tool-logo" />
       <div class="tool-info">
@@ -235,11 +247,11 @@
       <div class="pricing-open-source">
         <div class="pricing">
           <h3>Pricing</h3>
-          <p>20$/month</p>
+          <p>$20/month</p>
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✖️</p>
+          <p>{'short': '✖️', 'long': '✖️'}</p>
         </div>
       </div>
     </section>

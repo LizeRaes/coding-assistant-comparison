@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>Claude Code</h1>
+      <div class="category-badge">Coding Assistant</div>
       <p><a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://wpforms.com/wp-content/uploads/2024/08/claude-logo.png" alt="Claude Code logo" class="tool-logo" />
       <div class="tool-info">
@@ -239,7 +251,7 @@
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✖️</p>
+          <p>{'short': '✖️', 'long': '✖️'}</p>
         </div>
       </div>
     </section>
@@ -261,11 +273,11 @@
       </tr>
       <tr>
         <td>Smart Apply</td>
-        <td>✅ edits files️. Diff viewing with IDE-plugin</td>
+        <td>✅ edits files️. Diff viewing with IDE plugin</td>
       </tr>
       <tr>
         <td>Context Retrieval</td>
-        <td>manual select with IDE-plugin, MCP</td>
+        <td>manual select with IDE plugin, MCP</td>
       </tr>
       <tr>
         <td>Output Not Copyrighted Guarantee</td>

@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>Cursor</h1>
+      <div class="category-badge">Coding Assistant</div>
       <p><a href="https://www.cursor.com/" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://images.seeklogo.com/logo-png/61/1/cursor-logo-png_seeklogo-611587.png" alt="Cursor logo" class="tool-logo" />
       <div class="tool-info">
@@ -235,11 +247,11 @@
       <div class="pricing-open-source">
         <div class="pricing">
           <h3>Pricing</h3>
-          <p>free tier, 20$/month</p><p><a href="https://www.cursor.com/pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+          <p>free tier, $20/month</p><p><a href="https://www.cursor.com/pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✖️</p>
+          <p>{'short': '✖️', 'long': '✖️'}</p>
         </div>
       </div>
     </section>

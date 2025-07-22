@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate individual tool pages from assistants.js data
+Generate individual tool pages from the four separate data files
 """
 
 import json
@@ -32,6 +32,16 @@ def get_long_value(data, field):
         return value['long']
     return None
 
+def get_category_display_name(tool_type):
+    """Convert tool_type to display name"""
+    category_map = {
+        'coding_assistant': 'Coding Assistant',
+        'cli_tool': 'CLI Tool', 
+        'low_code': 'Low Code / No Code Tool',
+        'specialized': 'Specialized Tool'
+    }
+    return category_map.get(tool_type, tool_type)
+
 def generate_tool_page(tool_data, output_dir):
     """Generate HTML page for a single tool"""
     tool_name = tool_data['Tool']
@@ -44,6 +54,8 @@ def generate_tool_page(tool_data, output_dir):
     logo_url = tool_data.get('Logo Url', '')
     version = tool_data.get('Version', '')
     last_updated = tool_data.get('Last Updated', '')
+    tool_type = tool_data.get('tool_type', '')
+    category_display = get_category_display_name(tool_type)
     
     # Get summary
     summary = tool_data.get('Summary', 'No summary provided')
@@ -180,6 +192,17 @@ def generate_tool_page(tool_data, output_dir):
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }}
+    
+    .category-badge {{
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }}
     
     section {{
@@ -319,6 +342,7 @@ def generate_tool_page(tool_data, output_dir):
   <div class="container">
     <header>
       <h1>{tool_name}</h1>
+      <div class="category-badge">{category_display}</div>
       <p><a href="{homepage}" target="_blank" rel="noopener">Official Website ↗</a></p>
       {f'<img src="{logo_url}" alt="{tool_name} logo" class="tool-logo" />' if logo_url else ''}
       <div class="tool-info">
@@ -383,17 +407,27 @@ def generate_tool_page(tool_data, output_dir):
     print(f"Generated: {filename}")
     return filename
 
-def parse_assistants_js(assistants_file):
-    """Parse the assistants.js file as JSON with a stripped assignment."""
-    with open(assistants_file, 'r', encoding='utf-8') as f:
+def parse_js_file(js_file):
+    """Parse a JavaScript file containing a const array assignment."""
+    with open(js_file, 'r', encoding='utf-8') as f:
         content = f.read().strip()
-    # Remove the assignment and trailing semicolon
-    if content.startswith('const assistants = '):
-        content = content[len('const assistants = '):]
+    
+    # Extract the variable name from the const declaration
+    if content.startswith('const '):
+        # Find the first space after 'const' and the first '=' after that
+        const_end = content.find(' ', 6)  # Skip 'const '
+        equals_pos = content.find('=', const_end)
+        if equals_pos != -1:
+            # Get everything after the '='
+            content = content[equals_pos + 1:].strip()
+    
+    # Remove trailing semicolon if present
     if content.endswith(';'):
         content = content[:-1]
+    
     # Remove any trailing or leading whitespace/newlines
     content = content.strip()
+    
     # Now parse as JSON
     return json.loads(content)
 
@@ -402,6 +436,7 @@ def main():
     # Setup paths
     script_dir = Path(__file__).parent
     website_dir = script_dir / 'website'
+    data_dir = website_dir / 'data'
     output_dir = website_dir / 'tools'
     
     # Clear and recreate output directory
@@ -410,24 +445,42 @@ def main():
         shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True)
     
-    # Read assistants data
-    assistants_file = website_dir / 'data' / 'assistants.js'
+    # Define the four data files
+    data_files = [
+        ('coding_assistants.js', 'coding_assistant'),
+        ('cli_assistants.js', 'cli_tool'),
+        ('low_code_assistants.js', 'low_code'),
+        ('specialized_assistants.js', 'specialized')
+    ]
     
-    if not assistants_file.exists():
-        print(f"Error: {assistants_file} not found!")
-        return
+    # Read and combine data from all files
+    all_tools = []
+    for filename, tool_type in data_files:
+        js_file = data_dir / filename
+        if not js_file.exists():
+            print(f"Warning: {js_file} not found, skipping...")
+            continue
+        
+        try:
+            tools = parse_js_file(js_file)
+            # Add tool_type to each tool if not already present
+            for tool in tools:
+                if 'tool_type' not in tool:
+                    tool['tool_type'] = tool_type
+            all_tools.extend(tools)
+            print(f"Loaded {len(tools)} tools from {filename}")
+        except Exception as e:
+            print(f"Error parsing {filename}: {e}")
+            continue
     
-    # Parse the JavaScript file
-    assistants = parse_assistants_js(assistants_file)
-    
-    if not assistants:
-        print("Failed to parse assistants data!")
+    if not all_tools:
+        print("No tools found in any data files!")
         return
     
     # Generate pages for each tool and collect mapping
     generated_files = []
     tool_to_filename = {}
-    for tool in assistants:
+    for tool in all_tools:
         if tool.get('Tool'):  # Only process tools with names
             filename = generate_tool_page(tool, output_dir)
             generated_files.append(filename)
@@ -437,9 +490,12 @@ def main():
     print("Files generated:")
     for filename in sorted(generated_files):
         print(f"  - {filename}")
+    
     # Write mapping for use in JS
     with open(website_dir / 'tools' / 'tool_page_map.json', 'w', encoding='utf-8') as f:
         json.dump(tool_to_filename, f, indent=2)
+    
+    print(f"\nTool page mapping saved to {website_dir / 'tools' / 'tool_page_map.json'}")
 
 if __name__ == "__main__":
     main() 

@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,28 +229,29 @@
   <div class="container">
     <header>
       <h1>Amazon Q Developer CLI</h1>
+      <div class="category-badge">CLI Tool</div>
       <p><a href="https://aws.amazon.com/q/developer/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://d1.awsstatic.com/getting-started-guides/learning/amazon-q/icon_amazon-q.a5c38564734b6e9f611e9599eb271142389313a4.png" alt="Amazon Q Developer CLI logo" class="tool-logo" />
       <div class="tool-info">
         
-        
+        <p>Last updated: 2025-07-22</p>
       </div>
     </header>
 
     <section>
       <h2>Summary</h2>
-      <p>No summary provided</p>
+      <p>Amazon Q Developer CLI is a command line interface for Amazon Q Developer, providing AI-powered coding assistance directly in the terminal.</p>
     </section>
 
     <section>
       <div class="pricing-open-source">
         <div class="pricing">
           <h3>Pricing</h3>
-          <p>Free tier and Monthly subscription</p>
+          <p>free tier and monthly subscription</p>
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✅</p>
+          <p>{'short': '✅', 'long': '✅'}</p>
         </div>
       </div>
     </section>
@@ -265,7 +277,7 @@
       </tr>
       <tr>
         <td>Context Retrieval</td>
-        <td>Configurable context files, MCP</td>
+        <td>configurable context files, MCP</td>
       </tr>
       <tr>
         <td>Output Not Copyrighted Guarantee</td>
@@ -273,7 +285,7 @@
       </tr>
       <tr>
         <td>Supported IDEs</td>
-        <td>Terminal - zsh, bash, fish</td>
+        <td>terminal - zsh, bash, fish</td>
       </tr>
       <tr>
         <td>Underlying Model</td>
@@ -285,7 +297,7 @@
       </tr>
       <tr>
         <td>Respects Code Flavor</td>
-        <td>✅ Rules files (AmazonQ.md)</td>
+        <td>✅ rules files (AmazonQ.md)</td>
       </tr>
       <tr>
         <td>Agent Mode</td>
@@ -293,7 +305,7 @@
       </tr>
       <tr>
         <td>Controls Tools</td>
-        <td>Built in tools (file read/write, execute commands), MCP, command translation</td>
+        <td>built in tools (file read/write, execute commands), MCP, command translation</td>
       </tr>
       </table>
     </section>
@@ -303,11 +315,11 @@
       <div class="pros-cons">
         <div class="pros">
           <h3>Nice To Haves</h3>
-          <p>Fine grain control over tool permission, Context hooks, Context Management, Profiles, International language support</p>
+          <p>fine grain control over tool permission, context hooks, context management, profiles, international language support</p>
         </div>
         <div class="cons">
           <h3>Watch Out</h3>
-          <p>No native Windows installer (wsl required) </p>
+          <p>no native Windows installer (WSL required)</p>
         </div>
       </div>
     </section>

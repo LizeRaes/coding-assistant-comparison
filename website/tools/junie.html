@@ -79,6 +79,17 @@
       margin-top: 20px;
       font-size: 0.9em;
       opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
     }
     
     section {
@@ -218,6 +229,7 @@
   <div class="container">
     <header>
       <h1>Junie</h1>
+      <div class="category-badge">Coding Assistant</div>
       <p><a href="https://www.jetbrains.com/junie/" target="_blank" rel="noopener">Official Website ↗</a></p>
       <img src="https://plugins.jetbrains.com/files/26104/789538/icon/default.svg" alt="Junie logo" class="tool-logo" />
       <div class="tool-info">
@@ -228,18 +240,18 @@
 
     <section>
       <h2>Summary</h2>
-      <p>Junie is JetBrains's coding agent, integrated into all JetBrains IDEs and Android Studio. With enterprise use cases in mind, it will diligently run all tests to guarantee quality of the proposed code.Code flavor can be customized via guidelinees.md.</p>
+      <p>Junie is JetBrains's coding agent, integrated into all JetBrains IDEs and Android Studio. With enterprise use cases in mind, it will diligently run all tests to guarantee quality of the proposed code.Code flavor can be customized via guidelines.md.</p>
     </section>
 
     <section>
       <div class="pricing-open-source">
         <div class="pricing">
           <h3>Pricing</h3>
-          <p>free tier, AI Pro (100€/year), AI Ultimate (200€/year)</p><p><a href="https://www.jetbrains.com/junie/#pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
+          <p>free tier, then from €100/year</p><p><a href="https://www.jetbrains.com/junie/#pricing" target="_blank" rel="noopener">See latest pricing on vendor site ↗</a></p>
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
-          <p>✖️</p>
+          <p>{'short': '✖️', 'long': '✖️'}</p>
         </div>
       </div>
     </section>
