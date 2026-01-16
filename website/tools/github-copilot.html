@@ -240,7 +240,7 @@
 
     <section>
       <h2>Summary</h2>
-      <p>No summary provided</p>
+      <p>GitHub Copilot is one of the first AI coding assistants and remains the most widely adopted in the industry. Integrated into virtually any IDE, it offers intelligent code completion, chat-based assistance, and agent mode with MCP support. Powered by multiple AI models including Claude, GPT, and Gemini, it helps developers write code faster with context-aware suggestions. With features like full codebase retrieval, web search, and built-in tools for documentation, code review, and test generation.</p>
     </section>
 
     <section>
@@ -277,7 +277,7 @@
       </tr>
       <tr>
         <td>Context Retrieval</td>
-        <td>unknown (not great)</td>
+        <td>manual select, full codebase, MCP Servers, Web retrieval</td>
       </tr>
       <tr>
         <td>Output Not Copyrighted Guarantee</td>
@@ -289,19 +289,23 @@
       </tr>
       <tr>
         <td>Underlying Model</td>
-        <td>Claude, GPT, Gemini</td>
+        <td>Claude, GPT, Gemini, Groq, Azure, Google, Ollama, xAI, OpenRouter</td>
       </tr>
       <tr>
         <td>On Prem Option</td>
-        <td>✖️</td>
+        <td>✅ (with Ollama as model provider)</td>
       </tr>
       <tr>
         <td>Respects Code Flavor</td>
         <td>✖️</td>
       </tr>
       <tr>
+        <td>Agent Mode</td>
+        <td>✅</td>
+      </tr>
+      <tr>
         <td>Controls Tools</td>
-        <td>✖️</td>
+        <td>MCP, terminal, documentation (/doc), code review (/review), test generation (/test), code transformation (/transform)</td>
       </tr>
       </table>
     </section>
@@ -315,7 +319,7 @@
         </div>
         <div class="cons">
           <h3>Watch Out</h3>
-          <p>hallucinates methods (can't look over file boundaries)</p>
+          <p>Analytics provided via APIs and Dashboard, data is 100 days old for API and 28 days for Dashboard. One need to create their own Grafana or Analytics dashboard to look back longer periods</p>
         </div>
       </div>
     </section>
