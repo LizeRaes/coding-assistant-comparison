@@ -133,7 +133,7 @@ const coding_assistants = [
     "Agent Mode": { "short": "✅", "long": "✅" },
     "Controls Tools": { "short": "MCP, terminal", "long": "MCP, terminal, documentation (/doc), code review (/review), test generation (/test), code transformation (/transform)" },
     "Nice To Haves": { "short": "one of the first ones around and by far the most used", "long": "one of the first ones around and by far the most used" },
-    "Watch Out": { "short": "Analytics dashboard is in preview", "long": "Analytics provided via APIs and Dashboard, data is 100 days old ofr API and 28 days for Dashboard. One need to create their own Grafana or Analytics dashboard for longer periods" }
+    "Watch Out": { "short": "Analytics via API and Dashboard doesn't go back far", "long": "Analytics provided via APIs and Dashboard, data is 100 days old for API and 28 days for Dashboard. One need to create their own Grafana or Analytics dashboard to look back longer periods" }
   },
   {
     "Tool": "JetBrains AI Assistant",
