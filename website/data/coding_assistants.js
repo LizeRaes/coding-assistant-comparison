@@ -123,17 +123,17 @@ const coding_assistants = [
     "Code Completion": { "short": "✅", "long": "✅" },
     "Chat": { "short": "✅", "long": "✅" },
     "Smart Apply": { "short": "✖️", "long": "✖️" },
-    "Context Retrieval": { "short": "unknown (not great)", "long": "unknown (not great)" },
+    "Context Retrieval": { "short": "manual select, full codebase, MCP Servers, Web retrieval", "long": "manual select, full codebase, MCP Servers, Web retrieval" },
     "Output Not Copyrighted Guarantee": { "short": "✅ (opt-in)", "long": "✅ (opt-in)" },
     "Supported IDEs": { "short": "supports almost any IDE", "long": "supports almost any IDE" },
-    "Underlying Model": { "short": "Claude, GPT, Gemini", "long": "Claude, GPT, Gemini" },
-    "On Prem Option": { "short": "✖️", "long": "✖️" },
+    "Underlying Model": { "short": "Claude, GPT, Gemini, Groq, Azure, Google, Ollama, xAI, OpenRouter", "long": "Claude, GPT, Gemini, Groq, Azure, Google, Ollama, xAI, OpenRouter" },
+    "On Prem Option": { "short": "✅ (with Ollama as model provider)", "long": "✅ (with Ollama as model provider)" },
     "Respects Code Flavor": { "short": "✖️", "long": "✖️" },
     "Pricing": { "short": "free tier, $10/month", "long": "free tier, $10/month" },
-    "Agent Mode": { "short": "", "long": "" },
-    "Controls Tools": { "short": "✖️", "long": "✖️" },
+    "Agent Mode": { "short": "✅", "long": "✅" },
+    "Controls Tools": { "short": "MCP, terminal", "long": "MCP, terminal, documentation (/doc), code review (/review), test generation (/test), code transformation (/transform)" },
     "Nice To Haves": { "short": "one of the first ones around and by far the most used", "long": "one of the first ones around and by far the most used" },
-    "Watch Out": { "short": "hallucinates methods (can't look over file boundaries)", "long": "hallucinates methods (can't look over file boundaries)" }
+    "Watch Out": { "short": "Analytics dashboard is in preview", "long": "Analytics provided via APIs and Dashboard, data is 100 days old ofr API and 28 days for Dashboard. One need to create their own Grafana or Analytics dashboard for longer periods" }
   },
   {
     "Tool": "JetBrains AI Assistant",
