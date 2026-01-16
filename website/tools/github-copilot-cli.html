@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GitHub Copilot CLI - AI Coding Tool Comparison</title>
+  <meta name="description" content="Full feature details and comparison for GitHub Copilot CLI, an AI-powered command line assistant. Explore integrations, capabilities, pros, and cons." />
+  <meta name="keywords" content="GitHub Copilot CLI, AI CLI assistant, command line, shell commands, developer tools, terminal" />
+  <meta name="author" content="AI Coding Assistant Comparison" />
+  <meta property="og:title" content="GitHub Copilot CLI - AI Coding Tool Comparison" />
+  <meta property="og:description" content="Full feature details and comparison for GitHub Copilot CLI, an AI-powered command line assistant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aitoolcomparator.com/tools/github-copilot-cli.html" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/png" href="../code-assist.png" />
+  <link rel="apple-touch-icon" href="../code-assist.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../code-assist.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../code-assist.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f3f4f6;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0 0 20px 0;
+      font-size: 2.5em;
+      font-weight: 800;
+    }
+    
+    header p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+    
+    header a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    header a:hover {
+      text-decoration: underline;
+    }
+    
+    .tool-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin: 20px auto;
+      display: block;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    
+    .tool-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      font-size: 0.9em;
+      opacity: 0.9;
+      flex-wrap: wrap;
+    }
+    
+    .category-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    
+    section {
+      padding: 30px 40px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    h2 {
+      color: #1e40af;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 10px;
+    }
+    
+    h3 {
+      color: #374151;
+      font-size: 1.3em;
+      margin: 25px 0 15px 0;
+    }
+    
+    .pricing-open-source {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .pricing, .open-source {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .pricing h3, .open-source h3 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    th {
+      background: #1e40af;
+      color: white;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+    
+    tr:hover {
+      background: #f3f4f6;
+    }
+    
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    
+    .pros, .cons {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid;
+    }
+    
+    .pros {
+      border-left-color: #10b981;
+    }
+    
+    .cons {
+      border-left-color: #ef4444;
+    }
+    
+    footer {
+      background: #374151;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background: #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    
+    @media (max-width: 768px) {
+      .pros-cons, .pricing-open-source {
+        grid-template-columns: 1fr;
+      }
+      
+      .tool-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      header {
+        padding: 20px;
+      }
+      
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>GitHub Copilot CLI</h1>
+      <div class="category-badge">CLI Tool</div>
+      <p><a href="https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line" target="_blank" rel="noopener">Official Documentation ↗</a></p>
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Copilot CLI logo" class="tool-logo" />
+      <div class="tool-info">
+        <span>Last Updated: 2025-07-22</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>GitHub Copilot in the CLI brings AI-powered assistance to the terminal, helping developers with command suggestions, explanations, and shell command generation. It integrates with the GitHub CLI (<code>gh</code>) to provide natural language to shell command translation and detailed explanations of complex commands.</p>
+    </section>
+
+    <section>
+      <div class="pricing-open-source">
+        <div class="pricing">
+          <h3>Pricing</h3>
+          <p>Included with GitHub Copilot subscription:</p>
+          <ul>
+            <li>Individual: $10/month</li>
+            <li>Business: $19/user/month</li>
+            <li>Enterprise: $39/user/month</li>
+          </ul>
+        </div>
+        <div class="open-source">
+          <h3>Open Source</h3>
+          <p>✖️</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Code Completion</td>
+          <td>✖️ (focused on CLI commands, not code completion)</td>
+        </tr>
+        <tr>
+          <td>Chat</td>
+          <td>✅ (via <code>gh copilot explain</code> and <code>gh copilot suggest</code>)</td>
+        </tr>
+        <tr>
+          <td>Smart Apply</td>
+          <td>✅ (can execute suggested commands directly in terminal)</td>
+        </tr>
+        <tr>
+          <td>Context Retrieval</td>
+          <td>Shell history, current directory context</td>
+        </tr>
+        <tr>
+          <td>Output Not Copyrighted Guarantee</td>
+          <td>✅ (with Copilot Business/Enterprise)</td>
+        </tr>
+        <tr>
+          <td>Supported IDEs</td>
+          <td>Terminal - works with any shell that supports GitHub CLI (bash, zsh, PowerShell, etc.)</td>
+        </tr>
+        <tr>
+          <td>Underlying Model</td>
+          <td>GPT-4, Claude (multiple models available)</td>
+        </tr>
+        <tr>
+          <td>On Prem Option</td>
+          <td>✖️</td>
+        </tr>
+        <tr>
+          <td>Respects Code Flavor</td>
+          <td>✖️</td>
+        </tr>
+        <tr>
+          <td>Agent Mode</td>
+          <td>✖️</td>
+        </tr>
+        <tr>
+          <td>Controls Tools</td>
+          <td><code>gh copilot suggest</code> (generates commands), <code>gh copilot explain</code> (explains commands), can execute suggested commands</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Key Commands</h2>
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>gh copilot suggest</code></td>
+          <td>Generate shell commands from natural language descriptions</td>
+        </tr>
+        <tr>
+          <td><code>gh copilot explain</code></td>
+          <td>Get explanations for complex shell commands</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Pros & Cons</h2>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Nice To Haves</h3>
+          <ul>
+            <li>Cross-platform support (Windows, macOS, Linux)</li>
+            <li>Seamless GitHub CLI integration</li>
+            <li>Converts natural language to shell commands</li>
+            <li>Detailed command explanations</li>
+            <li>Works with multiple shell environments</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h3>Watch Out</h3>
+          <ul>
+            <li>Requires GitHub CLI installation</li>
+            <li>Requires active Copilot subscription</li>
+            <li>Focused specifically on shell/CLI commands</li>
+            <li>Not designed for general coding tasks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p><a href="../index.html">← Back to tool comparison table</a></p>
+    </footer>
+  </div>
+</body>
+</html>
