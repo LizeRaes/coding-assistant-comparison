@@ -48,5 +48,29 @@ const cli_assistants = [
     "Controls Tools": { "short": "terminal, web search, MCP", "long": "runs shell commands, interacts with files, fetches web content, and can integrate MCP servers." },
     "Nice To Haves": { "short": "open source, large context window, cross-file analysis, Windows", "long": "Open source, large context window (1 million tokens), cross-file analysis, native Windows support" },
     "Watch Out": { "short": "commandline only tool, unless paired with Gemini Code Assist IDE plugin", "long": "Commandline only tool, unless paired with Gemini Code Assist IDE plugin" }
+  },
+  {
+    "Tool": "GitHub Copilot CLI",
+    "tool_type": "cli_tool",
+    "Homepage": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line",
+    "Details Link": "tools/github-copilot-cli.html",
+    "Logo Url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    "Last Updated": "2025-07-22",
+    "Summary": "GitHub Copilot in the CLI brings AI-powered assistance to the terminal, helping developers with command suggestions, explanations, and shell command generation.",
+    "Open Source": { "short": "✖️", "long": "✖️" },
+    "Code Completion": { "short": "✖️", "long": "✖️ (focused on CLI commands, not code completion)" },
+    "Chat": { "short": "✅", "long": "✅ (via gh copilot explain and gh copilot suggest)" },
+    "Smart Apply": { "short": "✅ (executes suggested commands)", "long": "✅ (can execute suggested commands directly in terminal)" },
+    "Context Retrieval": { "short": "shell history, current directory", "long": "shell history, current directory context" },
+    "Output Not Copyrighted Guarantee": { "short": "✅", "long": "✅ (with Copilot Business/Enterprise)" },
+    "Supported IDEs": { "short": "terminal - any shell with gh CLI", "long": "terminal - works with any shell that supports GitHub CLI (bash, zsh, PowerShell, etc.)" },
+    "Underlying Model": { "short": "GPT-4, Claude", "long": "GPT-4, Claude (multiple models available)" },
+    "On Prem Option": { "short": "✖️", "long": "✖️" },
+    "Respects Code Flavor": { "short": "✖️", "long": "✖️" },
+    "Pricing": { "short": "included with Copilot subscription", "long": "Included with GitHub Copilot Individual ($10/month), Business ($19/user/month), or Enterprise ($39/user/month)" },
+    "Agent Mode": { "short": "✖️", "long": "✖️" },
+    "Controls Tools": { "short": "command suggest, command explain, shell execution", "long": "gh copilot suggest (generates commands), gh copilot explain (explains commands), can execute suggested commands" },
+    "Nice To Haves": { "short": "cross-platform, integrated with GitHub CLI, natural language to shell commands", "long": "Cross-platform support, seamless GitHub CLI integration, converts natural language to shell commands, command explanations" },
+    "Watch Out": { "short": "requires GitHub CLI and Copilot subscription, focused on shell commands only", "long": "Requires GitHub CLI installation and active Copilot subscription, focused specifically on shell/CLI commands rather than general coding" }
   }
 ]

@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>GitHub Copilot - AI Coding Tool Comparison</title>
-  <meta name="description" content="Full feature details and comparison for GitHub Copilot, an AI coding assistant. Explore integrations, capabilities, pros, and cons." />
-  <meta name="keywords" content="GitHub Copilot, AI coding assistant, code completion, developer tools, IDE integration" />
+  <title>GitHub Copilot CLI - AI Coding Tool Comparison</title>
+  <meta name="description" content="Full feature details and comparison for GitHub Copilot CLI, an AI-powered command line assistant. Explore integrations, capabilities, pros, and cons." />
+  <meta name="keywords" content="GitHub Copilot CLI, AI CLI assistant, command line, shell commands, developer tools, terminal" />
   <meta name="author" content="AI Coding Assistant Comparison" />
-  <meta property="og:title" content="GitHub Copilot - AI Coding Tool Comparison" />
-  <meta property="og:description" content="Full feature details and comparison for GitHub Copilot, an AI coding assistant." />
+  <meta property="og:title" content="GitHub Copilot CLI - AI Coding Tool Comparison" />
+  <meta property="og:description" content="Full feature details and comparison for GitHub Copilot CLI, an AI-powered command line assistant." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aitoolcomparator.com/tools/github-copilot.html" />
+  <meta property="og:url" content="https://aitoolcomparator.com/tools/github-copilot-cli.html" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="icon" type="image/png" href="../code-assist.png" />
   <link rel="apple-touch-icon" href="../code-assist.png" />
@@ -121,7 +121,6 @@
       gap: 30px;
       margin-top: 0;
       margin-bottom: 0;
-      /* No custom padding, let section handle it */
     }
     
     .pricing, .open-source {
@@ -204,6 +203,13 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    code {
+      background: #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
     
     @media (max-width: 768px) {
       .pros-cons, .pricing-open-source {
@@ -228,26 +234,30 @@
 <body>
   <div class="container">
     <header>
-      <h1>GitHub Copilot</h1>
-      <div class="category-badge">Coding Assistant</div>
-      <p><a href="https://github.com/features/copilot" target="_blank" rel="noopener">Official Website ↗</a></p>
-      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-copilot-icon.png" alt="GitHub Copilot logo" class="tool-logo" />
+      <h1>GitHub Copilot CLI</h1>
+      <div class="category-badge">CLI Tool</div>
+      <p><a href="https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line" target="_blank" rel="noopener">Official Documentation ↗</a></p>
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Copilot CLI logo" class="tool-logo" />
       <div class="tool-info">
-        
-        
+        <span>Last Updated: 2025-07-22</span>
       </div>
     </header>
 
     <section>
       <h2>Summary</h2>
-      <p>GitHub Copilot is one of the first AI coding assistants and remains the most widely adopted in the industry. Integrated into virtually any IDE, it offers intelligent code completion, chat-based assistance, and agent mode with MCP support. Powered by multiple AI models including Claude, GPT, and Gemini, it helps developers write code faster with context-aware suggestions. With features like full codebase retrieval, web search, and built-in tools for documentation, code review, and test generation.</p>
+      <p>GitHub Copilot in the CLI brings AI-powered assistance to the terminal, helping developers with command suggestions, explanations, and shell command generation. It integrates with the GitHub CLI (<code>gh</code>) to provide natural language to shell command translation and detailed explanations of complex commands.</p>
     </section>
 
     <section>
       <div class="pricing-open-source">
         <div class="pricing">
           <h3>Pricing</h3>
-          <p>free tier, $10/month</p>
+          <p>Included with GitHub Copilot subscription:</p>
+          <ul>
+            <li>Individual: $10/month</li>
+            <li>Business: $19/user/month</li>
+            <li>Enterprise: $39/user/month</li>
+          </ul>
         </div>
         <div class="open-source">
           <h3>Open Source</h3>
@@ -263,50 +273,68 @@
           <th>Feature</th>
           <th>Details</th>
         </tr>
-      <tr>
-        <td>Code Completion</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>Chat</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>Smart Apply</td>
-        <td>✖️</td>
-      </tr>
-      <tr>
-        <td>Context Retrieval</td>
-        <td>manual select, full codebase, MCP Servers, Web retrieval</td>
-      </tr>
-      <tr>
-        <td>Output Not Copyrighted Guarantee</td>
-        <td>✅ (opt-in)</td>
-      </tr>
-      <tr>
-        <td>Supported IDEs</td>
-        <td>supports almost any IDE</td>
-      </tr>
-      <tr>
-        <td>Underlying Model</td>
-        <td>Claude, GPT, Gemini, Groq, Azure, Google, Ollama, xAI, OpenRouter</td>
-      </tr>
-      <tr>
-        <td>On Prem Option</td>
-        <td>✅ (with Ollama as model provider)</td>
-      </tr>
-      <tr>
-        <td>Respects Code Flavor</td>
-        <td>✖️</td>
-      </tr>
-      <tr>
-        <td>Agent Mode</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>Controls Tools</td>
-        <td>MCP, terminal, documentation (/doc), code review (/review), test generation (/test), code transformation (/transform)</td>
-      </tr>
+        <tr>
+          <td>Code Completion</td>
+          <td>✖️ (focused on CLI commands, not code completion)</td>
+        </tr>
+        <tr>
+          <td>Chat</td>
+          <td>✅ (via <code>gh copilot explain</code> and <code>gh copilot suggest</code>)</td>
+        </tr>
+        <tr>
+          <td>Smart Apply</td>
+          <td>✅ (can execute suggested commands directly in terminal)</td>
+        </tr>
+        <tr>
+          <td>Context Retrieval</td>
+          <td>Shell history, current directory context</td>
+        </tr>
+        <tr>
+          <td>Output Not Copyrighted Guarantee</td>
+          <td>✅ (with Copilot Business/Enterprise)</td>
+        </tr>
+        <tr>
+          <td>Supported IDEs</td>
+          <td>Terminal - works with any shell that supports GitHub CLI (bash, zsh, PowerShell, etc.)</td>
+        </tr>
+        <tr>
+          <td>Underlying Model</td>
+          <td>GPT-4, Claude (multiple models available)</td>
+        </tr>
+        <tr>
+          <td>On Prem Option</td>
+          <td>✖️</td>
+        </tr>
+        <tr>
+          <td>Respects Code Flavor</td>
+          <td>✖️</td>
+        </tr>
+        <tr>
+          <td>Agent Mode</td>
+          <td>✖️</td>
+        </tr>
+        <tr>
+          <td>Controls Tools</td>
+          <td><code>gh copilot suggest</code> (generates commands), <code>gh copilot explain</code> (explains commands), can execute suggested commands</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Key Commands</h2>
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>gh copilot suggest</code></td>
+          <td>Generate shell commands from natural language descriptions</td>
+        </tr>
+        <tr>
+          <td><code>gh copilot explain</code></td>
+          <td>Get explanations for complex shell commands</td>
+        </tr>
       </table>
     </section>
 
@@ -315,11 +343,22 @@
       <div class="pros-cons">
         <div class="pros">
           <h3>Nice To Haves</h3>
-          <p>one of the first ones around and by far the most used</p>
+          <ul>
+            <li>Cross-platform support (Windows, macOS, Linux)</li>
+            <li>Seamless GitHub CLI integration</li>
+            <li>Converts natural language to shell commands</li>
+            <li>Detailed command explanations</li>
+            <li>Works with multiple shell environments</li>
+          </ul>
         </div>
         <div class="cons">
           <h3>Watch Out</h3>
-          <p>Analytics provided via APIs and Dashboard, data is 100 days old for API and 28 days for Dashboard. One need to create their own Grafana or Analytics dashboard to look back longer periods</p>
+          <ul>
+            <li>Requires GitHub CLI installation</li>
+            <li>Requires active Copilot subscription</li>
+            <li>Focused specifically on shell/CLI commands</li>
+            <li>Not designed for general coding tasks</li>
+          </ul>
         </div>
       </div>
     </section>
